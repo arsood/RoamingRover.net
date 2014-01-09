@@ -9,6 +9,9 @@ gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
+# User Font Awesome for Icons
+gem "font-awesome-rails"
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 
@@ -30,8 +33,12 @@ gem 'jbuilder', '~> 1.2'
 # Use Bootstrap 3 for UI/UX
 gem 'bootstrap-sass'
 
-# Use devise for handling of accounts
+# Use devise for handling of accounts. Devise allows for omniauth integration
 gem 'devise'
+gem 'omniauth'
+gem 'omniauth-facebook'
+
+gem  'certified'
 
 gem 'protected_attributes'
 
