@@ -34,6 +34,14 @@ img {
   @extend .btn-primary;
   @extend .btn-lg;
 }
+
+.btn {
+  -webkit-transition: background 0.5s linear;
+  -moz-transition: background 0.5s linear;
+  -ms-transition: background 0.5s linear;
+  -o-transition: background 0.5s linear;
+  transition: background 0.5s linear;        
+}
 // apply styles to HTML elements
 // to make views framework-neutral
 main {
@@ -84,8 +92,8 @@ section {
 }
 
 .facebook_link {
-  width: 350px;
-  background-color: #3e4764;
+  width: 100%;
+  background-color: #4c66a4;
   -webkit-transition: background-color 300ms linear;
   -moz-transition: background-color 300ms linear;
   -o-transition: background-color 300ms linear;
@@ -107,14 +115,17 @@ section {
   background-color: #235B97;  
 }
 
+.register_link {
+  background-color: #e66060;
+}
+
+.register_link:hover {
+  background-color: #ec574b;  
+}
+
 .btn-block {
   @extend .btn-primary;
   border-radius: 0px;
-  -webkit-transition: background 0.5s linear;
-  -moz-transition: background 0.5s linear;
-  -ms-transition: background 0.5s linear;
-  -o-transition: background 0.5s linear;
-  transition: background 0.5s linear;  
 }
 
 .signin {
@@ -123,7 +134,8 @@ section {
   padding: 10px;
   font-weight: bold;
   background: #3e4764;
-  border: 1px solid #7a8086;  
+  border: 1px solid #7a8086;
+  margin-bottom: 20px;
 }
 
 .circle {
@@ -158,4 +170,28 @@ input[type="checkbox"] + label span {
 
 input[type="checkbox"]:checked + label span{
   background: url(check_radio_sheet.png) -19px top no-repeat;
+}
+
+.register_form {
+  background: #505050;
+  padding: 20px; 
+  input[type="text"], input[type="password"], input[type="email"] {
+    background: #404040;
+    padding: 20px 0 20px 20px; 
+    border: 0px;
+    border-radius: 0px;
+  }
+  input {
+    font-weight: bold;
+  }
+}
+
+.btn-sign-up {
+  background: #FF8627;
+  border: none;
+  padding: 10px;
+}
+
+.btn-sign-up:hover {
+  background: #ff6610;
 }

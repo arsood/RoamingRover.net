@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
   devise :omniauthable, :omniauth_providers => [:facebook]
-  attr_accessible :provider, :uid, :name
+  attr_accessible :email, :password, :password_confirmation, :name
 
   def self.find_for_facebook_oauth(auth)
   	where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|

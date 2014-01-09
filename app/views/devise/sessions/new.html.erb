@@ -13,13 +13,13 @@
 			</div>
 
 			<% if devise_mapping.rememberable? -%>
-			<div><input id="user_remember_me" name="user[remember_me]" type="checkbox" value="1"><label for="user_remember_me"><span></span>Remember Me</label></div>
+			<div style="position:absolute;"><input id="user_remember_me" name="user[remember_me]" type="checkbox" value="1"><label for="user_remember_me"><span></span>Remember Me</label></div>
 			<% end -%>
 
 			<div><%= f.submit "Sign in", :class => "btn btn-block signin" %></div>
 			<% end %>
 		</div>
-		<div class="col-md-2">
+		<div class="col-md-2 hidden-sm hidden-xs">
 			<div class="circle">
 				OR
 			</div>
@@ -33,7 +33,7 @@
 				</div>
 			</a>
 			<a href="/users/sign_up">
-				<div class="input-group facebook_link">
+				<div class="input-group facebook_link register_link">
 					<%= fa_icon "pencil", :class => "input-group-addon facebook_icon pull-left" %>
 					<span>Create an Account</span>
 				</div>
