@@ -2,14 +2,18 @@
 @import "bootstrap";
 
 // make all images responsive by default
+body {
+  background-color: #373746;
+}
+
 img {
   @extend .img-responsive;
   margin: 0 auto;
-  }
+}
 // override for the 'Home' navigation link
 .navbar-brand {
   font-size: inherit;
-  }
+}
 
 // THESE ARE EXAMPLES YOU CAN MODIFY
 // create your own classes
@@ -17,29 +21,141 @@ img {
 .column {
   @extend .col-md-6;
   @extend .text-center;
-  }
+}
 .form {
   @extend .col-md-6;
-  }
+}
 .form-centered {
   @extend .col-md-6;
   @extend .text-center;
-  }
+}
 .submit {
   @extend .btn;
   @extend .btn-primary;
   @extend .btn-lg;
-  }
+}
 // apply styles to HTML elements
 // to make views framework-neutral
 main {
   @extend .container;
-  background-color: #eee;
+  background-color: #373746;
   padding-bottom: 80px;
   width: 100%;
   margin-top: 51px; // accommodate the navbar
-  }
+  color: #FFF;
+}
 section {
   @extend .row;
   margin-top: 20px;
+}
+
+.container {
+  .new_user_row {
+    margin-top: 25%;
+    .new_user {
+      .input-group {
+        input {
+          background-color: #282a38;
+          border: 0px;
+          border-radius: 0px;
+          padding: 20px 15px;
+          font-weight: bold;
+        }
+      }
+    }    
   }
+}
+
+.input-group {
+  margin-bottom: 20px;
+  border: 1px solid #7a8086;
+  i {
+    background-color: #1c1f25;
+    border: 0px;
+    border-radius: 0px;
+    padding: 10px 20px;
+  }
+}
+
+.facebook_icon {
+  background-color: #ccc !important;
+  padding: 13px 25px !important;
+  width: 16%;
+}
+
+.facebook_link {
+  width: 350px;
+  background-color: #3e4764;
+  -webkit-transition: background-color 300ms linear;
+  -moz-transition: background-color 300ms linear;
+  -o-transition: background-color 300ms linear;
+  -ms-transition: background-color 300ms linear;
+  transition: background-color 300ms linear;
+  span {
+    padding: 10px 25px;
+    position: absolute;
+    color: #FFF;
+    font-weight: bold;
+  }
+  span:hover {
+    text-decoration: none;
+    color: #FFF;
+  }
+}
+
+.facebook_link:hover {
+  background-color: #235B97;  
+}
+
+.btn-block {
+  @extend .btn-primary;
+  border-radius: 0px;
+  -webkit-transition: background 0.5s linear;
+  -moz-transition: background 0.5s linear;
+  -ms-transition: background 0.5s linear;
+  -o-transition: background 0.5s linear;
+  transition: background 0.5s linear;  
+}
+
+.signin {
+  width: 100px !important;
+  float: right;
+  padding: 10px;
+  font-weight: bold;
+  background: #3e4764;
+  border: 1px solid #7a8086;  
+}
+
+.circle {
+  width: 100px;
+  height: 100px;
+  -moz-border-radius: 50%; 
+  -webkit-border-radius: 50%; 
+  border-radius: 50%;
+  background: #3e4764;
+  margin: 0 auto;
+  padding: 40px;
+  font-weight: bold;
+}
+.signin:hover {
+  background: #1E2B46;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+input[type="checkbox"] + label span {
+  display: inline-block;
+  display:inline-block;
+  width:19px;
+  height:19px;
+  margin:-1px 4px 0 0;
+  vertical-align:middle;
+  background: url(check_radio_sheet.png) left top no-repeat; 
+  cursor:pointer;
+}
+
+input[type="checkbox"]:checked + label span{
+  background: url(check_radio_sheet.png) -19px top no-repeat;
+}
