@@ -19,7 +19,10 @@ test:
   timeout: 5000
 
 production:
-  adapter: sqlite3
-  database: db/production.sqlite3
-  pool: 5
-  timeout: 5000
+  adapter: mysql2
+  database: roamingrover
+  encoding: utf8
+  username: RoamingRover
+  password: RoamingRover
+  port: 3306
+  host: roamingrover-prod.ci5bjnwipsdv.us-west-2.rds.amazonaws.com
