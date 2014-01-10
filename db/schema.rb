@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140110035750) do
+ActiveRecord::Schema.define(version: 20140110072745) do
 
   create_table "bids", force: true do |t|
     t.text     "proposal",   limit: 255
@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 20140110035750) do
     t.string   "address"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "phone"
   end
 
   create_table "reviews", force: true do |t|
@@ -86,7 +87,6 @@ ActiveRecord::Schema.define(version: 20140110035750) do
     t.string   "uid"
     t.string   "name"
     t.string   "image"
-    t.string   "phone"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
@@ -101,6 +101,7 @@ ActiveRecord::Schema.define(version: 20140110035750) do
     t.text     "about",      limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "phone"
   end
 
 end
