@@ -3,4 +3,6 @@ class Owner < ActiveRecord::Base
 	has_many :dogs
 	has_many :jobs
 	has_many :reviews
+
+	attr_accessible :user_id, :address
 end
