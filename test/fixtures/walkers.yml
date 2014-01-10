@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  references: 
+  zipcode: MyString
+  breeds: MyString
+  age: 2014-01-09
+  experience: MyString
+  about: MyString
+
+two:
+  references: 
+  zipcode: MyString
+  breeds: MyString
+  age: 2014-01-09
+  experience: MyString
+  about: MyString
