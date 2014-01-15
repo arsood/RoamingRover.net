@@ -19,7 +19,7 @@
 	background-color:#B0C9E1;
 }
 
-#dashboard-enter-zip {
+#dw-dashboard-enter-zip {
 	width:400px;
 	margin-left:auto;
 	margin-right:auto;
@@ -27,8 +27,27 @@
 	margin-top:20px;
 }
 
-#dashboard-main {
+#dw-dashboard-main {
 	display:none;
+}
+
+#dw-dashboard-column-two {
+	display:none;
+	background-color:#EBEBEB;
+	margin-top:10px;
+	border-radius:5px;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	padding:10px;
+}
+
+.dw-dashboard-listing-modbox {
+	overflow:hidden;
+	background-color:#FFF;
+	border-radius:5px;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	padding:10px;
 }
 
 

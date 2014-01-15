@@ -1,5 +1,9 @@
 @charset "utf-8";
 
+.no-pad {
+	padding:0;
+}
+
 .txt-center {
 	text-align:center;
 }
