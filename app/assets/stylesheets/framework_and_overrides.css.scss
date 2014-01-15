@@ -2,18 +2,36 @@
 @import "bootstrap";
 
 // make all images responsive by default
-body {
-  background-color: #373746;
-}
-
 img {
   @extend .img-responsive;
   margin: 0 auto;
 }
+
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  font-size: 14px;
+  line-height: 1.428571429;
+  background-color: white ;
+}
+
 // override for the 'Home' navigation link
 .navbar-brand {
-  font-size: inherit;
+  position:fixed;
+  top: -10px;
+  left: 5px;
 }
+
+.navbar-inverse {
+  background-color: #0066CC;
+  border-color: #006666;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #E0E0E0; }
+    .navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
+      color: white;
+      background-color: transparent; }
 
 // THESE ARE EXAMPLES YOU CAN MODIFY
 // create your own classes
@@ -46,12 +64,11 @@ img {
 // to make views framework-neutral
 main {
   @extend .container;
-  background-color: #373746;
+  background-color: white;
   padding-bottom: 80px;
   width: 100%;
-  margin-top: 51px; // accommodate the navbar
-  color: #FFF;
 }
+
 section {
   @extend .row;
   margin-top: 20px;

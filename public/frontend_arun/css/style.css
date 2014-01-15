@@ -1,0 +1,35 @@
+@charset "utf-8";
+
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans);
+
+.large-page-heading {
+	font-size:2.5em;
+	font-family:"Droid Sans", Arial;
+	color:#999;
+}
+
+.container-full {
+	width:100%;
+	overflow:hidden;
+}
+
+/*DW DASHBOARD*/
+
+.dashboard-starting-background {
+	background-color:#B0C9E1;
+}
+
+#dashboard-enter-zip {
+	width:400px;
+	margin-left:auto;
+	margin-right:auto;
+	display:none;
+	margin-top:20px;
+}
+
+#dashboard-main {
+	display:none;
+}
+
+
+

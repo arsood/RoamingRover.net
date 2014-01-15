@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>RoamingRover</title>
+
+<link rel="stylesheet" type="text/css" href="libraries/bootstrap-3.0.3/css/bootstrap.css" />
+<link rel="stylesheet" type="text/css" href="libraries/font-awesome-4.0.3/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<link rel="stylesheet" type="text/css" href="css/helpers.css" />
+
+</head>
+
+<body class="dashboard-starting-background">
+
+<div class="txt-center large-page-heading margin-top-30">
+	Search Available Jobs
+</div>
+
+<!--Dashboard Enter Zip Field-->
+<div id="dashboard-enter-zip">
+	<div class="well">
+    	<div class="row">
+        	<div class="col-sm-9">
+            	<input id="dw-zip" type="tel" class="form-control" placeholder="Enter Your Zipcode" />
+            </div>
+            <div class="col-sm-3">
+            	<a id="set-zip-button" class="btn btn-primary">GO</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Dashboard Enter Zip Field-->
+
+<!--Dashboard Map and List View-->
+<div id="dashboard-main">
+    <div class="container-full margin-top-20">
+        <div class="col-sm-12 txt-right" style="padding-right:10px;">
+            <a class="btn btn-info"><i class="fa fa-map-marker"></i> Map View</a>
+            <a class="btn btn-info" style="margin-left:10px;"><i class="fa fa-list"></i> List View</a>
+            <a class="btn btn-warning" style="margin-left:10px;" data-toggle="modal" data-target="#change-zip-modal"><i class="fa fa-gears"></i> Change Zip</a>
+        </div>
+    </div>
+    
+    <div class="container-full margin-top-10">
+        <div id="dw-dashboard-mainstage" class="col-sm-12">-->
+            <!--MAP HERE-->
+        </div>
+    </div>
+</div>
+<!--/Dashboard Map and List View-->
+
+<!--Change Zip Modal-->
+<div class="modal fade" id="change-zip-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            	<h4 class="modal-title txt-center">Change Zip</h4>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <input id="new-dw-zip" type="tel" class="form-control" placeholder="New Zipcode" />
+                </div>
+                <div class="margin-top-10 txt-center">
+                    <a id="change-zip-button" class="btn btn-primary">Change</a>
+                </div>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+<!--Change Zip Modal-->
+
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript" src="libraries/jquery-1.10.2/jquery-1.10.2.js"></script>
+<script type="text/javascript" src="libraries/bootstrap-3.0.3/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/roamingrover.js"></script>
+
+</body>
+</html>
