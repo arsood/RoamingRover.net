@@ -16,4 +16,6 @@
 /tmp
 
 # Ignore schema.rb to stop causing conflicts.
+=======
+# Ignore schema
 /db/schema.rb
