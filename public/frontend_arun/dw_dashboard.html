@@ -17,21 +17,7 @@
 	Search Available Jobs
 </div>
 
-<div id="dashboard-main">
-    <div class="container-full margin-top-20">
-        <div class="col-sm-12 txt-right" style="padding-right:10px;">
-            <a class="btn btn-info"><i class="fa fa-map-marker"></i> Map View</a>
-            <a class="btn btn-info" style="margin-left:10px;"><i class="fa fa-list"></i> List View</a>
-        </div>
-    </div>
-    
-    <div class="container-full margin-top-10">
-        <div id="dw-dashboard-mainstage" class="col-sm-12">-->
-            <!--MAP HERE-->
-        </div>
-    </div>
-</div>
-
+<!--Dashboard Enter Zip Field-->
 <div id="dashboard-enter-zip">
 	<div class="well">
     	<div class="row">
@@ -44,6 +30,46 @@
         </div>
     </div>
 </div>
+<!--Dashboard Enter Zip Field-->
+
+<!--Dashboard Map and List View-->
+<div id="dashboard-main">
+    <div class="container-full margin-top-20">
+        <div class="col-sm-12 txt-right" style="padding-right:10px;">
+            <a class="btn btn-info"><i class="fa fa-map-marker"></i> Map View</a>
+            <a class="btn btn-info" style="margin-left:10px;"><i class="fa fa-list"></i> List View</a>
+            <a class="btn btn-warning" style="margin-left:10px;" data-toggle="modal" data-target="#change-zip-modal"><i class="fa fa-gears"></i> Change Zip</a>
+        </div>
+    </div>
+    
+    <div class="container-full margin-top-10">
+        <div id="dw-dashboard-mainstage" class="col-sm-12">-->
+            <!--MAP HERE-->
+        </div>
+    </div>
+</div>
+<!--/Dashboard Map and List View-->
+
+<!--Change Zip Modal-->
+<div class="modal fade" id="change-zip-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            	<h4 class="modal-title txt-center">Change Zip</h4>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <input id="new-dw-zip" type="tel" class="form-control" placeholder="New Zipcode" />
+                </div>
+                <div class="margin-top-10 txt-center">
+                    <a id="change-zip-button" class="btn btn-primary">Change</a>
+                </div>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+<!--Change Zip Modal-->
 
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
 <script type="text/javascript" src="libraries/jquery-1.10.2/jquery-1.10.2.js"></script>
