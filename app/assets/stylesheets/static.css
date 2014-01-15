@@ -2514,7 +2514,7 @@ i, em {
   #welcome .intro: not(.active) article:hover, #welcome article.active {
   width: 5%}
 }#welcome #singles-welcome {
-  background-image: url("/assets/background-images/bg-welcome-singles.jpg");
+  background-image: url("DogwalkersBckgrnd.jpg");
   background-position: center right;
 }
 #welcome #singles-welcome .inner-container {
@@ -2639,7 +2639,7 @@ i, em {
   color: #f8f4eb;
 }
 #singles .intro .background-image-container {
-  background-image: url("/assets/background-images/bg-intro-singles.jpg");
+  background-image: url("DogwalkersBckgrnd.jpg");
 }
 @media screen and (max-width: 640px) {
   #singles .intro .background-image-container {
@@ -2721,7 +2721,7 @@ i, em {
   text-align: center;
 }
 #press .background-image-container {
-  background-image: url("/assets/background-images/bg-intro-press.jpg");
+  background-image: url("DogwalkersBckgrnd.jpg");
   overflow: hidden;
 }
 @media screen and (max-width: 640px) {
