@@ -68,7 +68,7 @@
 }
 
 .intro .action span {
-  text-shadow: 0 0 1px #fff;
+/*  text-shadow: 0 0 1px #fff;*/
   font-size: .875em;
   margin-right: 20px;
   margin-left: 20px;
@@ -113,10 +113,10 @@
   width: auto;
 }
 }.details ul li h3 {
-  -webkit-box-shadow: 0 1px 0 #fff;
+/*  -webkit-box-shadow: 0 1px 0 #fff;
   -moz-box-shadow: 0 1px 0 #fff;
-  box-shadow: 0 1px 0 #fff;
-  border-bottom: 1px solid #dcd6cb;
+  box-shadow: 0 1px 0 #fff;*/
+ /* border-bottom: 1px solid #dcd6cb;*/
   font-size: 30px;
   line-height: .8;
   margin-top: 0;
@@ -168,7 +168,7 @@
   margin: 0;
   width: 90%}
 #welcome article aside {
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.58);
+/*  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.58);*/
   *zoom: 1;
   filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0,  startColorstr='#57FFFFFF',  endColorstr='#269E9789');
   background-image: -webkit-gradient(linear,  50% 0%,  50% 100%,  color-stop(0%,  rgba(255, 255, 255, 0.34)),  color-stop(100%,  rgba(158, 151, 137, 0.15)));
@@ -207,11 +207,7 @@
   width: 420px;
 }
 #welcome article .description header {
-  -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
-  -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
   background-image: none;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
   margin-bottom: 34px;
   padding-top: 0;
   padding-bottom: 24px;
@@ -278,9 +274,6 @@
   -ms-border-radius: 5px 0 0 5px;
   -o-border-radius: 5px 0 0 5px;
   border-radius: 5px 0 0 5px;
-  -webkit-box-shadow: -4px 4px 4px rgba(0, 0, 0, 0.44);
-  -moz-box-shadow: -4px 4px 4px rgba(0, 0, 0, 0.44);
-  box-shadow: -4px 4px 4px rgba(0, 0, 0, 0.44);
   border-left: 1px solid rgba(255, 255, 255, 0.97);
   right: 0;
 }
@@ -288,10 +281,6 @@
   left: 0;
 }
 #welcome #walkers-welcome .description header {
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
-  border-bottom: 0;
   margin-bottom: 0;
   padding-bottom: 0;
 }
@@ -299,10 +288,6 @@
   font-size: 1.125em;
 }
 #welcome #walkers-welcome .description p:first-of-type {
-  -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
-  -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
   margin-bottom: 34px;
   padding-bottom: 24px;
 }
@@ -333,9 +318,6 @@
   -ms-border-radius: 0 5px 5px 0;
   -o-border-radius: 0 5px 5px 0;
   border-radius: 0 5px 5px 0;
-  -webkit-box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.44);
-  -moz-box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.44);
-  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.44);
   left: 0;
 }
 #welcome #owners-welcome .description {
