@@ -21,21 +21,20 @@ function resizeMainstage() {
 //Set the zipcode
 
 $("#set-zip-button").click(function() {
-	setDwZip();
+	setDwZip($("#dw-zip").val());
 });
 
 $("#dw-zip").keypress(function(e) {
 	if (e.which == 13) {
-		setDwZip();
+		setDwZip($("#dw-zip").val());
 	}
 });
 
-function setDwZip() {
-	var dwZipcode = $("#dw-zip").val();
+function setDwZip(zipcode) {
 	$("#dashboard-enter-zip").fadeOut(800, function() {
 		$.ajax({
 			type: "GET",
-			url: "http://maps.googleapis.com/maps/api/geocode/json?sensor=false&address=" + dwZipcode,
+			url: "http://maps.googleapis.com/maps/api/geocode/json?sensor=false&address=" + zipcode,
 			async: false,
 			success: function(data) {
 				var zip_latitude = data['results'][0]['geometry']['location']['lat'];
@@ -52,5 +51,22 @@ function setDwZip() {
 			}
 		});		
 	});
+}
+
+//Change zipcode
+
+$("#new-dw-zip").keypress(function(e) {
+	if (e.which == 13) {
+		changeDwZip();
+	}
+});
+
+$("#change-zip-button").click(function() {
+	changeDwZip();
+});
+
+function changeDwZip() {
+	setDwZip($("#new-dw-zip").val());
+	$("#change-zip-modal").modal("hide");
 }
 
