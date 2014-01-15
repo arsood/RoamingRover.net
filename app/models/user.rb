@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   has_one :owner
   has_one :walker
   
+  
   # Facebook User Authentication
   def self.find_for_facebook_oauth(auth)
   	where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
