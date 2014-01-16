@@ -6,8 +6,8 @@ class OwnersController < ApplicationController
 	def new
 	  @owner = Owner.new
   end
-	def show
-	
+	def get_walkers
+	 
   end
   
 	def edit

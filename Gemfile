@@ -47,6 +47,8 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+gem 'bcrypt-ruby', '~> 3.1.2'
+
 group :development do
   gem 'rails_layout'
 end
