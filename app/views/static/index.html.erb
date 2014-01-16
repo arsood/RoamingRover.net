@@ -1,4 +1,3 @@
-<div class="container">
   <div class="inner-container">
  
         </div>
@@ -17,46 +16,27 @@
               Find dogs to walk.
             </p>
           </aside>
-                    <form class="description" id="new_user" method="get" action="#" accept-charset="UTF-8" style="top: 50%; margin-top: -207px;"><header>
+          <div class="description" style="top: 50%; margin-top: -207px;">
             <h1>
               Dogwalkers
             </h1>
-          </header>
           <p>
             Connect with dog-owners with our <br>simple-to-use mobile app.  Get jobs galore!
           </p>
           <p>
-            <label for="user_gender">I’m a</label>
-            <select autofocus="" id="user_gender" name="user[gender]">
-            <option value="male">man</option>
-            <option value="female" selected="">woman</option></select>
-            <label for="user_orientation">interested in</label>
-            <select id="user_orientation" name="user[orientation]">
-            <option value="men" selected="">men</option>
-            <option value="women">women</option>
-            <option value="both">both</option></select>
-          </p>
-          <p>
-            <label for="user_age_range_lower">age</label>
-            <input alt="e.g. 25" id="user_age_range_lower" maxlength="2" name="user[age_range_lower]" placeholder="25" size="2" type="tel">
-            <label for="user_age_range_upper">to</label>
-            <input alt="e.g. 45" id="user_age_range_upper" maxlength="2" name="user[age_range_upper]" placeholder="45" size="2" type="tel">
-            <label for="zipcode">near</label>
-            <span class="location">
-              <input data-field="location_id" id="zipcode" maxlength="5" name="zipcode" placeholder="zip" size="5" type="tel">
-            </span>
-            <input name="user[landing_page_code]" type="hidden" value="unified-commercial">
+            I am a dogwalker looking for clients near
+            <div class="field">
+           <%= text_field_tag :zipcode, "zipcode" %>
+          </div>
+          <div class="actions">
+           <%= button_to "Get Started", walkers_path, :method => :get%>
+          </div>
           </p>
           <div class="action">
-            <input class="white_bordered_button" type="submit" value="Get Started">
-            <span>
               Already a member?
-              <a class="walkers-login" href=#>
-                Login »
-              </a>
-            </span>
+              <%= link_to "Login >>", new_session_path(resource_name) %>
           </div>
-          </form>
+          </div>
 
         </div>
         <div class="mask"></div>
@@ -72,31 +52,23 @@
               Find a dogwalker! </p>
           </aside>
           <div class="description" style="top: 50%; margin-top: -207px;">
-            <header>
               <h1>
                 Owners
               </h1>
-            </header>
             <p>
               Find reliable dogwalkers.
-              </p><div class="action">
-                <a class="forward-params white_bordered_button" href=#>
-                  Get Started
-                </a>
-                <span class="button-spacer">
-                  or
-                </span>
-                <a class="forward-params white_bordered_button facebook" href=#>
-                  <span class="icon-facebook"></span>
-                  Connect
-                </a>
-              </div>
+              </p>
+               <p> I am looking for a dogwalker near: </p>
+                <div class="field">
+                <%= text_field_tag :zipcode, "zipcode" %>
+                </div>
+                <div class="actions">
+               <%= button_to "Get Started", owners_path, :method => :get%>
+               </div>
               <div class="action_links">
                 <span>
                   Already a member?
-                  <a class="forward-params" href=#>
-                    Login »
-                  </a>
+                 <%= link_to "Login >>", new_session_path(resource_name) %>
                 </span>
               </div>
             <p></p>
@@ -110,5 +82,4 @@
 <div class="jumbotron">
 <h1>
   Learn More!</h1>
-</div>
 </div>
