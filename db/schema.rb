@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 20140115040040) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "zipcode"
+    t.string   "phone"
   end
 
   create_table "reviews", force: true do |t|
@@ -87,7 +88,6 @@ ActiveRecord::Schema.define(version: 20140115040040) do
     t.string   "uid"
     t.string   "name"
     t.string   "image"
-    t.string   "phone"
     t.string   "zipcode"
   end
 
@@ -103,6 +103,7 @@ ActiveRecord::Schema.define(version: 20140115040040) do
     t.text     "about",      limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "phone"
   end
 
 end
