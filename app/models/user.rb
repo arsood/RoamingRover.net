@@ -17,6 +17,10 @@ class User < ActiveRecord::Base
 	    user.name = auth.info.name
 	    user.image = auth.info.image
 	    user.save!
+
+      # Creates Walker and Owner profiles
+      walker = Walker.where(:user_id => user.id).first_or_create(:user_id => user.id)
+      owner = Owner.where(:user_id => user.id).first_or_create(:user_id => user.id)    
 	  end
   end
   
