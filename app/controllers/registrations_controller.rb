@@ -5,8 +5,10 @@ class RegistrationsController < Devise::RegistrationsController
 
   def create
   	super
-  	@user.create_walker
-  	@user.create_owner
+    if not current_user.nil?
+  	 current_user.create_walker
+  	 current_user.create_owner
+    end
   end
 
   def update
