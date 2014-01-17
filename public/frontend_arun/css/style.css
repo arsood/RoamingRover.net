@@ -2,9 +2,12 @@
 
 @import url(http://fonts.googleapis.com/css?family=Droid+Sans);
 
+body {
+	font-family:"Droid Sans", Arial;
+}
+
 .large-page-heading {
 	font-size:2.5em;
-	font-family:"Droid Sans", Arial;
 	color:#999;
 }
 
@@ -23,7 +26,6 @@
 	width:400px;
 	margin-left:auto;
 	margin-right:auto;
-	display:none;
 	margin-top:20px;
 }
 
@@ -39,6 +41,7 @@
 	-webkit-border-radius:5px;
 	-moz-border-radius:5px;
 	padding:10px;
+	overflow-y:scroll;
 }
 
 .dw-dashboard-listing-modbox {
@@ -48,6 +51,23 @@
 	-webkit-border-radius:5px;
 	-moz-border-radius:5px;
 	padding:10px;
+	transition:all 0.3s linear;
+	margin-top:10px;
+}
+
+.dw-dashboard-listing-modbox:first-child {
+	margin-top:0;
+}
+
+.dw-dashboard-listing-modbox:hover {
+	background-color:#DDD;
+	transition:all 0.3s linear;
+	cursor:pointer;
+}
+
+.dw-listing-title {
+	font-size:1.3em;
+	font-weight:bold;
 }
 
 
