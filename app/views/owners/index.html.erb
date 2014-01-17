@@ -23,5 +23,16 @@
 		<textarea name="dog[about]" id="about" class="form-control"></textarea>
 		<%= f.submit "Add Dog", :class => "btn btn-block btn-signup" %>
 		<% end %>
-	</div>
+		</div>
+		<div class="col-md-4">
+			<div class="form-group">
+				<%= form_for @owner do |f| %>
+					Full Address: <%= f.text_field :address, :class => "form-control" %>
+					ZipCode: <%= f.text_field :zipcode, :class => "form-control" %>
+					Phone: <%= f.text_field :phone, :class => "form-control" %>
+					<%= f.submit "Update Profile", :class => "btn btn-block btn-signup" %>
+				<% end %>
+			</div>
+		</div>
+		
 	</div>

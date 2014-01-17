@@ -8,20 +8,17 @@ class OwnersController < ApplicationController
 		@dog = Dog.new
 	end
 
-	def owner_params
-		params.require(:owners).permit(:user_id, :address)
+	def update 
+		@owner = Owner.find(current_user.owner.id)
+		if @owner.update_attributes(owner_params)
+			redirect_to owner_path, :notice => "Your profile has been updated!"
+		else
+		    redirect_to owner_path, :alert => "Looks like there was an issue updating your profile!"
+		end
 	end
-	
-	def new
-	  @owner = Owner.new
-  end
-	def get_walkers
-	 
-  end
-  
-	def edit
-	  
-  end
-  
-	
+
+	def owner_params
+		params.require(:owner).permit(:user_id, :address, :phone, :zipcode)
+	end
+
 end
