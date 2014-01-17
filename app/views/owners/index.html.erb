@@ -1,7 +1,27 @@
-<div class="container">
 	<div class="row">
-		<h3>Owner Info</h3>
+		<h1>Owner Info</h1>
 		<%= @owner.inspect %>
 		<hr>
+		<h1>Walkers Listing</h1>
+		<%= @walkers.inspect %>
+		<hr>
+		<h1>Dogs List</h1>
+		<%= @owner.dogs.inspect %>
+		<hr>
+		<div class="col-md-4">
+		<%= form_for @dog do |f| %>
+		<div class="form-group">
+			Name: <%= f.text_field :name, :class => "form-control" %>
+		</div>
+		<div class="form-group">
+			Breed: <%= f.text_field :breed, :class => "form-control" %>
+		</div>
+		<div class="form-group">
+			Age: <%= f.number_field :age, :class => "form-control" %>
+		</div>
+		About:<br>
+		<textarea name="dog[about]" id="about" class="form-control"></textarea>
+		<%= f.submit "Add Dog", :class => "btn btn-block btn-signup" %>
+		<% end %>
 	</div>
-</div>
+	</div>
