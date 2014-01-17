@@ -4,6 +4,9 @@ RoamingRoverNet::Application.routes.draw do
 
   resources :walkers, :owners
 
+  resources :walkers
+  resources :owners
+
   devise_scope :user do
     get 'sign_out', :to => 'devise/sessions#destroy'
   end

@@ -1,19 +1,11 @@
-<div class="container">
-<!-- 	<div class="row">
-		<%= image_tag('dog.png') %>
-	</div> -->
-
-
-</div>
-
-<div class="inner-container">
+  <div class="inner-container">
  
         </div>
   <section id="welcome">
   <section class="intro" style="height: 500px;">
     <div class="background-image-container">
 
-      <article id="singles-welcome">
+      <article id="walkers-welcome">
         <div class="fade"></div>
         <div class="inner-container">
           <aside>
@@ -24,51 +16,32 @@
               Find dogs to walk.
             </p>
           </aside>
-                    <form class="description" id="new_user" method="get" action="#" accept-charset="UTF-8" style="top: 50%; margin-top: -207px;"><header>
+          <div class="description" style="top: 50%; margin-top: -207px;">
             <h1>
               Dogwalkers
             </h1>
-          </header>
           <p>
-            Connect with dog-owners with our simple-to-use mobile app.  Get jobs galore!
+            Connect with dog-owners with our <br>simple-to-use mobile app.  Get jobs galore!
           </p>
           <p>
-            <label for="user_gender">I’m a</label>
-            <select autofocus="" id="user_gender" name="user[gender]">
-            <option value="male">man</option>
-            <option value="female" selected="">woman</option></select>
-            <label for="user_orientation">interested in</label>
-            <select id="user_orientation" name="user[orientation]">
-            <option value="men" selected="">men</option>
-            <option value="women">women</option>
-            <option value="both">both</option></select>
-          </p>
-          <p>
-            <label for="user_age_range_lower">age</label>
-            <input alt="e.g. 25" id="user_age_range_lower" maxlength="2" name="user[age_range_lower]" placeholder="25" size="2" type="tel">
-            <label for="user_age_range_upper">to</label>
-            <input alt="e.g. 45" id="user_age_range_upper" maxlength="2" name="user[age_range_upper]" placeholder="45" size="2" type="tel">
-            <label for="zipcode">near</label>
-            <span class="location">
-              <input data-field="location_id" id="zipcode" maxlength="5" name="zipcode" placeholder="zip" size="5" type="tel">
-            </span>
-            <input name="user[landing_page_code]" type="hidden" value="unified-commercial">
+            I am a dogwalker looking for clients near
+            <div class="field">
+           <%= text_field_tag :zipcode, "zipcode" %>
+          </div>
+          <div class="actions">
+           <%= button_to "Get Started", walkers_path, :method => :get%>
+          </div>
           </p>
           <div class="action">
-            <input class="white_bordered_button" type="submit" value="Get Started">
-            <span>
               Already a member?
-              <a class="singles-login" href=#>
-                Login »
-              </a>
-            </span>
+              <%= link_to "Login >>", new_session_path(resource_name) %>
           </div>
-          </form>
+          </div>
 
         </div>
         <div class="mask"></div>
       </article>
-      <article id="couples-welcome">
+      <article id="owners-welcome">
         <div class="fade"></div>
         <div class="inner-container">
           <aside>
@@ -79,31 +52,23 @@
               Find a dogwalker! </p>
           </aside>
           <div class="description" style="top: 50%; margin-top: -207px;">
-            <header>
               <h1>
                 Owners
               </h1>
-            </header>
             <p>
               Find reliable dogwalkers.
-              </p><div class="action">
-                <a class="forward-params white_bordered_button" href=#>
-                  Get Started
-                </a>
-                <span class="button-spacer">
-                  or
-                </span>
-                <a class="forward-params white_bordered_button facebook" href=#>
-                  <span class="icon-facebook"></span>
-                  Connect
-                </a>
-              </div>
+              </p>
+               <p> I am looking for a dogwalker near: </p>
+                <div class="field">
+                <%= text_field_tag :zipcode, "zipcode" %>
+                </div>
+                <div class="actions">
+                  <%= button_to "Get Started", owners_path, :method => :get%>
+               </div>
               <div class="action_links">
                 <span>
                   Already a member?
-                  <a class="forward-params" href=#>
-                    Login »
-                  </a>
+                 <%= link_to "Login >>", new_session_path(resource_name) %>
                 </span>
               </div>
             <p></p>
@@ -113,333 +78,8 @@
       </article>
     </div>
   </section>
- <!--  <section class="details inner-container" id="learn-more-jump">
-    <div class="inlay bottom">
-      <a href="http://www.howaboutwe.com/#learn-more-jump">Learn More</a>
-    </div>
-    <p>
-      Whether you're single or in a relationship,
-      <br>
-      we'll help you go on better dates.
-    </p>
-  </section>
-</section>
-<article class="product" id="singles" role="article">
-  <section class="intro">
-    <div class="background-image-container">
-      <div class="inner-container">
-        <div class="text">
-          <header>
-            <h1>
-              If you're Single…
-            </h1>
-          </header>
-          <h2>
-            Post a Date, get Connected, and go out.
-          </h2>
-          <p>
-            New York Dating has over 1,000,000 members who want to meet
-            new people in the real world.
-          </p>
-          <div class="action">
-            <a class="forward-params white_bordered_button" href="http://www.howaboutwe.com/signup?user[landing_page_code]=unified-commercial">
-              Find Dates
-            </a>
-            <span>
-              Already a member?
-              <a class="singles-login" href="http://www.howaboutwe.com/login">
-                Login »
-              </a>
-            </span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="details inner-container">
-    <div class="content-sample">
-      <img alt="" height="305" src="./HowAboutWe   For Singles - Free Online Dating   For Couples - The Best Local Dates at up to 75% Off_files/ab-sample-singles.png" width="182">
-    </div>
-    <ul>
-      <li>
-        <h3>
-          <span>Join Free &amp;</span>
-          Post a Date Idea
-        </h3>
-        <p>
-          Start with the words, "How about we…" then suggest a
-          date you'd like to go on.
-        </p>
-      </li>
-      <li>
-        <h3>
-          <span>Make Real</span>
-          Connections
-        </h3>
-        <p>
-          Everyday we'll send you new date suggestions from people we
-          think you'll like.
-        </p>
-      </li>
-      <li>
-        <h3>
-          <span>Meet</span>
-          Offline
-        </h3>
-        <p>
-          We make it easier than any other dating site to meet new people
-          offline — where real connections happen.
-        </p>
-      </li>
-    </ul>
-  </section>
-</article>
-<article class="product" id="couples" role="article">
-  <section class="intro">
-    <div class="background-image-container">
-      <div class="inner-container">
-        <div class="text">
-          <header>
-            <h1>
-              If you're in a Relationship…
-            </h1>
-          </header>
-          <h2>
-            Go on Wonderful Dates Together
-          </h2>
-          <p>
-            We've designed a membership service that's just for
-            couples. We'll send you a fresh batch of date ideas, every
-            day. Choose the ones you like and go.
-          </p>
-          <div class="action">
-            <a class="forward-params white_bordered_button" href="http://couples.howaboutwe.com/?from=wl-commercial">
-              Get Started
-            </a>
-            <span>
-              Already a member?
-              <a href="http://couples.howaboutwe.com/login?from=wl-commercial">
-                Login »
-              </a>
-            </span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="details inner-container">
-    <div class="content-sample">
-      <img alt="" height="321" src="./HowAboutWe   For Singles - Free Online Dating   For Couples - The Best Local Dates at up to 75% Off_files/ab-sample-couples.png" width="180">
-    </div>
-    <ul>
-      <li>
-        <h3>
-          <span>Book The</span>
-          Dates you Like
-        </h3>
-        <p>
-          Every date in our collection is chosen for its quality and
-          originality — and members save up to 75%.
-        </p>
-      </li>
-      <li>
-        <h3>
-          <span>Take Advantage Of</span>
-          Member Benefits
-        </h3>
-        <p>
-          See sold out shows, go on free dates, and plan special occasions
-          with our free concierge service.
-        </p>
-      </li>
-      <li>
-        <h3>
-          <span>It's All</span>
-          Taken Care Of
-        </h3>
-        <p>
-          Just browse your HowAboutWe Dates, choose the ones you like, and
-          we'll handle all the details.
-        </p>
-      </li>
-    </ul>
-  </section>
-</article>
-      <section id="press">
-        <div class="background-image-container">
-          <div class="inner-container">
-            <aside>
-              <header>
-                <h1>
-                  Press
-                </h1>
-              </header>
-              <div class="swiper-container">
-                <ul class="swiper-wrapper" style="width: 2100px; height: 200px; -webkit-transform: translate3d(-900px, 0px, 0px); transition: 0.3s; -webkit-transition: 0.3s;"><li class="techcrunch quote swiper-slide" style="width: 300px; height: 200px;">
-                    <p class="content">
-                      “Helping Couples to stay happy, connected and in
-                      love is what HowAboutWe for Couples is all about.”
-                    </p>
-                    <p class="source">
-                      – TechCrunch
-                    </p>
-                  </li>
-                  <li class="nytimes quote swiper-slide" style="width: 300px; height: 200px;">
-                    <p class="content">
-                      “What if a dating site didn't stop at finding you
-                      love? What if it also helped you ‘date’ your
-                      life partner, and, through the surprise and renewal of
-                      that dating, to stay in love?”
-                    </p>
-                    <p class="source">
-                      – New York Times
-                    </p>
-                  </li>
-                  <li class="cosmopolitan quote swiper-slide" style="width: 300px; height: 200px;">
-                    <p class="content">
-                      “Fun date ideas do exist, and HowAboutWe.com is the
-                      fastest way to find them.”
-                    </p>
-                    <p class="source">
-                      – Cosmopolitan
-                    </p>
-                  </li>
-                  <li class="gawker quote swiper-slide swiper-slide-visible swiper-slide-active" style="width: 300px; height: 200px;">
-                    <p class="content">
-                      “The epicenter of the New First Date movement is a
-                      new website called HowAboutWe.com.”
-                    </p>
-                    <p class="source">
-                      – Gawker
-                    </p>
-                  </li>
-                  <li class="gq quote swiper-slide" style="width: 300px; height: 200px;">
-                    <p class="content">
-                      “…more fun, more creative, and more enticing
-                      than everything else out there.”
-                    </p>
-                    <p class="source">
-                      – GQ
-                    </p>
-                  </li>
-                  <li class="techcrunch quote swiper-slide" style="width: 300px; height: 200px;">
-                    <p class="content">
-                      “Helping Couples to stay happy, connected and in
-                      love is what HowAboutWe for Couples is all about.”
-                    </p>
-                    <p class="source">
-                      – TechCrunch
-                    </p>
-                  </li>
-                <li class="nytimes quote swiper-slide" style="width: 300px; height: 200px;">
-                    <p class="content">
-                      “What if a dating site didn't stop at finding you
-                      love? What if it also helped you ‘date’ your
-                      life partner, and, through the surprise and renewal of
-                      that dating, to stay in love?”
-                    </p>
-                    <p class="source">
-                      – New York Times
-                    </p>
-                  </li></ul>
-              </div>
-            </aside>
-            <ul class="sources">
-              <li class="nytimes">
-                The New York Times
-              </li>
-              <li class="cosmopolitan">
-                Cosmopolitan
-              </li>
-              <li class="gawker highlight">
-                Gawker
-              </li>
-              <li class="gq">
-                GQ
-              </li>
-              <li class="techcrunch">
-                TechCrunch
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
-      <footer class="product" id="site-footer" role="contentinfo">
-        <div class="inner-container">
-          <div class="howaboutwe-logo small">
-            HowAboutWe…
-          </div>
-          <nav class="site-verticals">
-            <ul>
-              <li>
-                <a class="forward-params" href="http://www.howaboutwe.com/signup?user[landing_page_code]=unified-commercial">Dating</a>
-              </li>
-              <li>
-                <a class="forward-params" href="http://couples.howaboutwe.com/?from=wl-commercial">Couples</a>
-              </li>
-              <li>
-                <a href="http://www.howaboutwe.com/contact-us">Contact</a>
-              </li>
-              <li>
-                <a href="http://www.howaboutwe.com/press">Press</a>
-              </li>
-              <li>
-                <a href="http://www.howaboutwe.com/jobs">Jobs</a>
-              </li>
-              <li>
-                <a href="http://www.howaboutwe.com/affiliates">Affiliates</a>
-              </li>
-            </ul>
-          </nav>
-          <nav class="social-links">
-            Follow Us:
-            <a class="icon-twitter" target="_blank" title="Twitter" href="https://twitter.com/howaboutwe"></a>
-            <a class="icon-facebook" target="_blank" title="Facebook" href="https://www.facebook.com/howaboutwe"></a>
-          </nav>
-          <p class="copyright">
-            <a href="http://nytm.org/made/">Made in New York City</a>
-            | © Copyright 2014 This Life, Inc. All rights reserved.
-          </p>
-        </div>
-      </footer>
-    </div>
-    <section id="modals-container">
-      <div class="new_modal" id="singles-user-session-modal">
-        <header>
-          <h1>
-            Login to Your Account
-          </h1>
-        </header>
-        <article>
-                    <form class="new_form" method="post" action="https://www.howaboutwe.com/login" accept-charset="UTF-8"><fieldset>
-            <label for="user_session_login">
-              Email or Username
-            </label>
-            <input id="user_session_login" name="user_session[login]" placeholder="e.g. email@example.com" size="30" tabindex="1" type="text">
-          </fieldset>
-          <fieldset>
-            <label for="user_session_password">
-              Password
-            </label>
-            <a class="forgot-password" href="http://www.howaboutwe.com/login/reset">Forgot password?</a>
-            <input id="user_session_password" name="user_session[password]" placeholder="your password" size="30" tabindex="2" type="password">
-          </fieldset>
-          <fieldset>
-            <span class="remember-me">
-              <input id="user_session_remember_me" name="user_session[remember_me]" type="checkbox" value="1">
-              <label class="check-radio-label" for="user_session_remember_me">
-                Remember me
-              </label>
-            </span>
-            <input class="button" type="submit" value="Login">
-          </fieldset>
-          </form>
-
-        </article>
-      </div>
-    </section>
-    
-  
-
-</body></html>
- -->
+ 
+<div class="jumbotron">
+<h1>
+  Learn More!</h1>
+</div>
