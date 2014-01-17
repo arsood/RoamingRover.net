@@ -18,7 +18,7 @@
 </div>
 
 <!--Dashboard Enter Zip Field-->
-<div id="dashboard-enter-zip">
+<div id="dw-dashboard-enter-zip">
 	<div class="well">
     	<div class="row">
         	<div class="col-sm-9">
@@ -33,20 +33,32 @@
 <!--Dashboard Enter Zip Field-->
 
 <!--Dashboard Map and List View-->
-<div id="dashboard-main">
+<div id="dw-dashboard-main">
     <div class="container-full margin-top-20">
         <div class="col-sm-12 txt-right" style="padding-right:10px;">
-            <a class="btn btn-info"><i class="fa fa-map-marker"></i> Map View</a>
-            <a class="btn btn-info" style="margin-left:10px;"><i class="fa fa-list"></i> List View</a>
+            <a id="toggle-map-view" class="btn btn-info"><i class="fa fa-map-marker"></i> Map View</a>
+            <a id="toggle-list-view" class="btn btn-info" style="margin-left:10px;"><i class="fa fa-list"></i> Hybrid View</a>
             <a class="btn btn-warning" style="margin-left:10px;" data-toggle="modal" data-target="#change-zip-modal"><i class="fa fa-gears"></i> Change Zip</a>
         </div>
     </div>
     
-    <div class="container-full margin-top-10">
-        <div id="dw-dashboard-mainstage" class="col-sm-12">-->
-            <!--MAP HERE-->
+    <!--DW Map-->
+    <div id="dw-dashboard-column-one" class="no-pad" style="padding-right:5px;">
+        <div class="container-full margin-top-10">
+            <div id="dw-dashboard-main-map" class="col-sm-12">-->
+                <!--MAP HERE-->
+            </div>
         </div>
     </div>
+    <!--/DW Map-->
+    
+    <!--DW Listings-->
+    <div id="dw-dashboard-column-two" class="no-pad" style="padding-left:5px;">
+    	<div class="dw-dashboard-listing-modbox">
+        </div>
+    </div>
+    <!--/DW Listings-->
+    
 </div>
 <!--/Dashboard Map and List View-->
 
