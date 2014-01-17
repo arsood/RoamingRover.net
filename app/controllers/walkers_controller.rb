@@ -3,5 +3,9 @@ class WalkersController < ApplicationController
 		params.require(:walkers).permit(:user_id, :zip_code, :breeds, :age, :experience, :about)
 	end
 
-  
+  def index
+  end
+
+  def show
+  end
 end
