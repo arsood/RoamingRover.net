@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140115040040) do
+ActiveRecord::Schema.define(version: 20140110072745) do
 
   create_table "bids", force: true do |t|
     t.text     "proposal",   limit: 255
