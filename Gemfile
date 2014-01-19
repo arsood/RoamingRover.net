@@ -9,7 +9,7 @@ gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
-# User Font Awesome for Icons
+# User Font Awesome for Icons - https://github.com/bokmann/font-awesome-rails
 gem "font-awesome-rails"
 
 # Use Uglifier as compressor for JavaScript assets
@@ -30,10 +30,13 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
-# Use Bootstrap 3 for UI/UX
+# Use Bootstrap 3 for UI/UX - https://github.com/twbs/bootstrap-sass
 gem 'bootstrap-sass'
 
 # Use devise for handling of accounts. Devise allows for omniauth integration
+# Devise - https://github.com/plataformatec/devise
+# Omniauth - https://github.com/intridea/omniauth
+# Omniauth Facebook - https://github.com/mkdynamic/omniauth-facebook
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
@@ -42,12 +45,13 @@ gem  'certified'
 
 gem 'protected_attributes'
 
+# Image Upload Gem - https://github.com/thoughtbot/paperclip
+gem "paperclip", "~> 3.0"
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
 end
-
-gem 'bcrypt-ruby', '~> 3.1.2'
 
 group :development do
   gem 'rails_layout'
