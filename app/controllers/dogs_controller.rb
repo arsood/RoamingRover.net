@@ -4,12 +4,9 @@ class DogsController < ApplicationController
 		@dog.owner_id = current_user.owner.id
 		respond_to do |format|
 			if @dog.save
-				format.html { redirect_to @dog, notice: 'dog was successfully created.' }
-				format.js
-				format.json { render action: 'show', status: :created, location: @dog }
+				redirect_to owners_path, :notice => "Dog added successfully!"
 			else
-				format.html { render action: 'new' }
-				format.json { render json: @dog.errors, status: :unprocessable_entity }
+			    redirect_to owners_path, :alert => "We were not able to add your dog!"
 			end
 		end
 	end

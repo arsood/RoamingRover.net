@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140110072745) do
+ActiveRecord::Schema.define(version: 20140117044819) do
 
   create_table "bids", force: true do |t|
     t.text     "proposal",   limit: 255
@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 20140110072745) do
     t.string   "status"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "dogs"
   end
 
   add_index "jobs", ["owner_id"], name: "index_jobs_on_owner_id"
@@ -55,8 +56,8 @@ ActiveRecord::Schema.define(version: 20140110072745) do
     t.string   "address"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "zipcode"
     t.string   "phone"
+    t.string   "zipcode"
   end
 
   create_table "reviews", force: true do |t|

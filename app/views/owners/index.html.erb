@@ -6,22 +6,80 @@
 		<%= @walkers.inspect %>
 		<hr>
 		<h1>Dogs List</h1>
-		<%= @owner.dogs.inspect %>
-		<hr>
-		<div class="col-md-4">
-		<%= form_for @dog do |f| %>
-		<div class="form-group">
-			Name: <%= f.text_field :name, :class => "form-control" %>
-		</div>
-		<div class="form-group">
-			Breed: <%= f.text_field :breed, :class => "form-control" %>
-		</div>
-		<div class="form-group">
-			Age: <%= f.number_field :age, :class => "form-control" %>
-		</div>
-		About:<br>
-		<textarea name="dog[about]" id="about" class="form-control"></textarea>
-		<%= f.submit "Add Dog", :class => "btn btn-block btn-signup" %>
+		<% @owner.dogs.each do |d| %>
+		<%= d.inspect %><br>
 		<% end %>
-	</div>
+		<hr>
+		<h1>Job Listing</h1>
+		<%= @owner.jobs.each do |j| %>
+		<%= j.inspect %>
+		<% end %>
+		<div class="col-md-4">
+			<h2>Add Dog</h2>
+			<%= form_for @dog do |f| %>
+			<div class="form-group">
+				Name: <%= f.text_field :name, :class => "form-control" %>
+			</div>
+			<div class="form-group">
+				Breed: <%= f.text_field :breed, :class => "form-control" %>
+			</div>
+			<div class="form-group">
+				Age: <%= f.number_field :age, :class => "form-control" %>
+			</div>
+			<div class="form-group">
+				About:<br>
+				<textarea name="dog[about]" id="about" class="form-control"></textarea>
+			</div>
+			<%= f.submit "Add Dog", :class => "btn btn-block btn-signup" %>
+			<% end %>
+		</div>
+		<div class="col-md-4">
+				<h2>Updated Owner Profile</h2>
+				<%= form_for @owner do |f| %>
+				<div class="form-group">
+					Full Address: <%= f.text_field :address, :class => "form-control" %>
+				</div>
+				<div class="form-group">
+					ZipCode: <%= f.text_field :zipcode, :class => "form-control" %>
+				</div>
+				<div class="form-group">
+					Phone: <%= f.text_field :phone, :class => "form-control" %>
+				</div>
+				<%= f.submit "Update Profile", :class => "btn btn-block btn-signup" %>
+				<% end %>
+		</div>
+		<div class="col-md-4">
+			<h2>Add Job</h2>
+			<%= form_for @job do |f| %>
+				<div class="form-group">
+					Title: <%= f.text_field :title, :class => "form-control" %>
+				</div>
+				<div class="form-group">
+					Description: 
+					<textarea name="job[description]" id="description" class="form-control"></textarea>
+				</div>
+				Days:
+				<div class="form-group">
+					<label class="checkbox-inline"><%= check_box_tag "days[]", "Monday", false, :class => "form-control inline" %> M </label>
+					<label class="checkbox-inline"><%= check_box_tag "days[]", "Tuesday", false, :class => "form-control" %> T </label>
+					<label class="checkbox-inline"><%= check_box_tag "days[]", "Wednesday", false, :class => "form-control" %> W </label>
+					<label class="checkbox-inline"><%= check_box_tag "days[]", "Thursday", false, :class => "form-control" %> T </label>
+					<label class="checkbox-inline"><%= check_box_tag "days[]", "Friday", false, :class => "form-control" %> F </label>
+					<label class="checkbox-inline"><%= check_box_tag "days[]", "Saturday", false, :class => "form-control" %> S </label>
+					<label class="checkbox-inline"><%= check_box_tag "days[]", "Sunday", false, :class => "form-control" %> S </label>
+				</div>
+				Dogs:
+				<div class="form-group">
+					<% @owner.dogs.each do |d| %>
+						<label class="checkbox-inline"><%= check_box_tag "dogs[]", d.id, false, :class => "form-control inline" %> <%= d.name %> </label>
+					<% end %>
+				</div>
+				<div class="form-group">
+					<%= f.number_field :rate, :class => "form-control" %>
+				</div>
+				<%= hidden_field :job, :status, :value => "listed" %>
+				<%= f.submit "Place Ad", :class => "btn btn-block btn-signup" %>
+			<% end %>
+		</div>		
+		</div>
 	</div>

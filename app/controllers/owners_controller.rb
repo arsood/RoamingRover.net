@@ -6,22 +6,20 @@ class OwnersController < ApplicationController
 		# Will need to add zipcode localization condition
 		@walkers = Walker.find(:all, :conditions => ["id != ?", current_user.id])
 		@dog = Dog.new
+		@job = Job.new
+	end
+
+	def update 
+		@owner = Owner.find(current_user.owner.id)
+		if @owner.update_attributes(owner_params)
+			redirect_to owners_path, :notice => "Your profile has been updated!"
+		else
+		    redirect_to owners_path, :alert => "Looks like there was an issue updating your profile!"
+		end
 	end
 
 	def owner_params
-		params.require(:owners).permit(:user_id, :address)
+		params.require(:owner).permit(:user_id, :address, :phone, :zipcode)
 	end
-	
-	def new
-	  @owner = Owner.new
-  end
-	def get_walkers
-	 
-  end
-  
-	def edit
-	  
-  end
-  
-	
+
 end
