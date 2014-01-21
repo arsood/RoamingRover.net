@@ -4,5 +4,5 @@ class Owner < ActiveRecord::Base
 	has_many :jobs
 	has_many :reviews
 
-	attr_accessible :user_id, :address
+	attr_accessible :user_id, :address, :zipcode, :phone
 end

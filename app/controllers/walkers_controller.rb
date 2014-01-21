@@ -6,7 +6,7 @@ class WalkersController < ApplicationController
 	end
 
 	def walker_params
-		params.require(:walkers).permit(:user_id, :zip_code, :breeds, :age, :experience, :about)
+		params.require(:walkers).permit(:user_id, :zipcode, :breeds, :age, :experience, :about)
 	end
 
   def index

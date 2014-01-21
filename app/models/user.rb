@@ -4,8 +4,10 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
   devise :omniauthable, :omniauth_providers => [:facebook]
   attr_accessible :email, :password, :password_confirmation, :name, :image, :phone
+  validates :name, :email, presence: true
   has_one :owner
   has_one :walker
+  
   
   # Facebook User Authentication
   def self.find_for_facebook_oauth(auth)

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140110072745) do
+ActiveRecord::Schema.define(version: 20140119014044) do
 
   create_table "bids", force: true do |t|
     t.text     "proposal",   limit: 255
@@ -27,11 +27,14 @@ ActiveRecord::Schema.define(version: 20140110072745) do
     t.string   "name"
     t.string   "breed"
     t.integer  "age"
-    t.string   "image"
     t.integer  "owner_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.text     "about",      limit: 255
+    t.text     "about",               limit: 255
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   add_index "dogs", ["owner_id"], name: "index_dogs_on_owner_id"
@@ -46,6 +49,7 @@ ActiveRecord::Schema.define(version: 20140110072745) do
     t.string   "status"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "dogs"
   end
 
   add_index "jobs", ["owner_id"], name: "index_jobs_on_owner_id"
@@ -56,6 +60,7 @@ ActiveRecord::Schema.define(version: 20140110072745) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "phone"
+    t.string   "zipcode"
   end
 
   create_table "reviews", force: true do |t|
@@ -87,6 +92,7 @@ ActiveRecord::Schema.define(version: 20140110072745) do
     t.string   "uid"
     t.string   "name"
     t.string   "image"
+    t.string   "zipcode"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

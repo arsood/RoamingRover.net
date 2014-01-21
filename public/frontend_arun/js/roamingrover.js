@@ -1,12 +1,3 @@
-//Animate enter zip field
-
-$(document).ready(function() {
-	$("#dw-dashboard-enter-zip").fadeIn(800);
-	$("#dw-dashboard-enter-zip").animate({
-		"margin-top": "17%"
-	}, 1200);
-});
-
 //Resize the mainstage
 
 $(window).resize(function() {
@@ -18,6 +9,7 @@ function resizeMainMap() {
 	$("#dw-dashboard-main-map:first-child").css("height", $(window).height()-170);
 	$("#dw-dashboard-main-map").css("width", $(window).width());
 	$("#dw-dashboard-main-map:first-child").css("width", $(window).width());
+	$("#dw-dashboard-column-two").css("height", $(window).height() - 170);
 }
 
 //Set the zipcode
@@ -33,7 +25,7 @@ $("#dw-zip").keypress(function(e) {
 });
 
 function setDwZip(zipcode) {
-	$("#dw-dashboard-enter-zip").fadeOut(800, function() {
+	$("#dw-dashboard-enter-zip").fadeOut(100, function() {
 		$.ajax({
 			type: "GET",
 			url: "http://maps.googleapis.com/maps/api/geocode/json?sensor=false&address=" + zipcode,
@@ -88,3 +80,8 @@ $("#toggle-map-view").click(function() {
 	resizeMainMap();
 });
 
+//Launch proposal modal
+
+$(".dw-dashboard-listing-modbox").click(function() {
+	$("#submit-prop-modal").modal("show");
+});
