@@ -1,12 +1,14 @@
 class OwnersController < ApplicationController
-	before_filter :require_signin
-
 	def index
-		@owner = current_user.owner
-		# Will need to add zipcode localization condition
-		@walkers = Walker.find(:all, :conditions => ["id != ?", current_user.id])
-		@dog = Dog.new
-		@job = Job.new
+		if not current_user.nil?
+			@owner = current_user.owner
+			@walkers = Walker.find(:all, :conditions => ["id != ? AND zipcode IS NOT NULL", current_user.id])
+			@dog = Dog.new
+			@job = Job.new
+		else 
+			# Will need to add zipcode localization condition
+			@walkers = Walker.find(:all, :conditions => ["zipcode != NULL"])		
+		end
 	end
 
 	def update 
