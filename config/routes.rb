@@ -5,8 +5,8 @@ RoamingRoverNet::Application.routes.draw do
   resources :walkers, :owners, :dogs
 
   namespace :api do
-    namespace :v1 do
-      resources :walkers, :users, :dogs, :jobs
+    namespace :v1, :defaults => {:format => 'json'}  do
+      resources :walkers, :users, :dogs, :jobs, :owners
     end
   end
 
@@ -14,7 +14,7 @@ RoamingRoverNet::Application.routes.draw do
     get 'sign_out', :to => 'devise/sessions#destroy'
   end
 
-  match '/walkers',  to: 'walkers#show',    via: 'get'
+  match '/walkers',	to: 'walkers#show',	via: 'get'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
