@@ -163,7 +163,6 @@ PLATFORMS
 DEPENDENCIES
   bootstrap-sass
   certified
-  coffee-rails (~> 4.0.0)
   devise
   font-awesome-rails
   jbuilder (~> 1.2)

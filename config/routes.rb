@@ -10,6 +10,8 @@ RoamingRoverNet::Application.routes.draw do
 
   match '/walkers',  to: 'walkers#show',    via: 'get'
   match '/walkers',  to: 'walkers#show',    via: 'get'
+
+  get 'dashboard/:zipcode', :to => 'walkers#dashboard_calls'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

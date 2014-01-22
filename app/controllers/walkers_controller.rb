@@ -14,4 +14,10 @@ class WalkersController < ApplicationController
 
   def show
   end
+
+  def dashboard_calls
+  	@client_listings = Job.where()
+
+  	render 'dw_dashboard'
+  end
 end
