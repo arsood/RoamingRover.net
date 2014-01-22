@@ -1,13 +1,8 @@
 RoamingRoverNet::Application.routes.draw do
   root 'static#index'
-<<<<<<< HEAD
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks", :registrations => 'registrations' }
 
   resources :walkers, :owners, :dogs
-
-  resources :walkers
-  resources :owners
-=======
 
   namespace :api do
     namespace :v1 do
@@ -15,16 +10,12 @@ RoamingRoverNet::Application.routes.draw do
     end
   end
 
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
->>>>>>> febdc4a3193207c1f9e6ddff3e1889f33e77071f
-
-  resources :walkers, :users
   devise_scope :user do
     get 'sign_out', :to => 'devise/sessions#destroy'
   end
 
   match '/walkers',  to: 'walkers#show',    via: 'get'
-  match '/walkers',  to: 'walkers#show',    via: 'get'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

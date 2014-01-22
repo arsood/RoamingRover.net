@@ -9,22 +9,32 @@ module Api
       end
 
       def show
-	respond_with Walker.find(params[:id])
+	@walker = Walker.find(params[:id])
+	respond_with @walker
       end
 
-      def create (params[:user_id1, :zip_code1, :breeds1, :age1, :experience1, :about1])
-	#using variablename + 1 for temp variables
-	Walker.create(:user_id1, :zip_code1, :breeds1, :age1, :experience1, :about1)
+      def create
+	Walker.create(walker_params)
       end
 
       def update
-	#to do
+	@walker = Walker.find(params[:id])
+	respond_to do |format|
+	  if @walker.update_attributes(walker_params)
+	    format.json {respond_with @walker}
+	  end
+	end
       end
 
       def destroy
-	#to do
+	#Not adding a destroy function to the mobile app-users can cancel accounts on the site
       end
-  
+      
+      private
+        #Private method to encapsulate permissible parameters.
+        def walker_params
+	  params.require(:walker).permit(:user_id, :zip_code, :breeds, :age, :experience, :about)
+        end  
     end
   end
 end
