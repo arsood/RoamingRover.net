@@ -8,14 +8,33 @@
 		<!-- If user is signed in, display all options -->
 		<% if not @owner.nil? %>
 		<h1>Owner Info</h1>
-		<%= @owner.inspect %><br>
+		<div class="well">
+			<p>Name: <%= @owner.user.name %></p>
+			<p>Address: <%= @owner.address %></p>
+			<p>Zipcode: <%= @owner.zipcode %></p>
+			<p>Phone: <%= @owner.phone %></p>
+		</div>
 		<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#update_owner">
 			Update Info
 		</button>
 		<hr>
 		<h1>Dogs List</h1>
-		<% @owner.dogs.each do |d| %>
-		<%= d.inspect %><br>
+		<% @owner.dogs.each do |dog| %>
+		<div class="well col-md-12">
+			<div class="col-md-3">
+				<%= image_tag dog.avatar.url(:thumb) %>
+			</div>
+			<div class="col-md-3">
+				<p>Name: <%= dog.name %></p>
+				<p>Breed: <%= dog.breed %></p>
+				<p>Age: <%= dog.age %></p>
+				<p>Fixed: <%= dog.fixed ? 'Yes' : 'No' %>
+			</div>
+			<div class="col-md-6">
+				<p>About:</p>
+				<p><%= dog.about %></p>
+			</div>
+		</div>
 		<% end %>
 		<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#add_dog">
 			Add Dog
@@ -48,6 +67,11 @@
 						</div>
 						<div class="form-group">
 							Age: <%= f.number_field :age, :class => "form-control", :min => 0 %>
+						</div>
+						<div class="form-group">
+							Not Fixed: <%= f.radio_button :fixed, false, :checked => true %> <br>
+							Fixed: <%= f.radio_button :fixed, true %>
+
 						</div>
 						<div class="form-group">
 							Image: <%= f.file_field :avatar, :class => "form-control" %>
@@ -129,7 +153,8 @@
 							<% end %>
 						</div>
 						<div class="form-group">
-							<%= f.number_field :rate, :class => "form-control" %>
+							Rate:
+							<%= f.text_field :rate, :class => "form-control" %>
 						</div>
 						<%= hidden_field :job, :status, :value => "listed" %>
 					</div>
