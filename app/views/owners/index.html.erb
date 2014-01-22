@@ -9,7 +9,7 @@
 		<% if not @owner.nil? %>
 		<div class="panel panel-primary">
 		  <!-- Default panel contents -->
-		  <div class="panel-heading">Owner Info	<button class="btn btn-xs btn-warning pull-right" data-toggle="modal" data-target="#update_owner">Update Info</button></div>
+		  <div class="panel-heading">Owner Info	<button class="btn btn-xs btn-warning pull-right" data-toggle="modal" data-target="#update_owner"><%= fa_icon "pencil" %></button></div>
   		  <div class="panel-body">
 			<p><strong>Name:</strong> <%= @owner.user.name %></p>
 			<p><strong>Address:</strong> <%= @owner.address %></p>
@@ -18,11 +18,37 @@
 		  </div>
 		</div>		
 		<hr>
+		<div class="panel panel-primary">
+		  <div class="panel-heading">Job Listing<button class="btn btn-success btn-xs pull-right" data-toggle="modal" data-target="#add_job"><%= fa_icon "plus" %></button>
+		  </div>
+
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<th>Job Title</th>
+						<th>Rate</th>
+						<th style="width: 1%"></th>
+						<th style="width: 1%"></th>
+					</tr>
+				</thead>
+				<tbody>
+				<% @owner.jobs.each do |job| %>
+					<tr>
+						<td><%= link_to job.title, job %></td>
+						<td><%= job.rate %></td>
+						<td><%= link_to "View", job, :class => "btn btn-primary btn-xs" %></td>
+						<td><%= link_to 'Delete', job, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-xs btn-danger" %></td>
+					</tr>
+				<% end %>
+				</tbody>
+			</table>
+		</div>
+		<hr>
 		<h3>Dogs List</h3>
 		<% @owner.dogs.each do |dog| %>
 		<div class="panel panel-primary">
 		  <!-- Default panel contents -->
-		  <div class="panel-heading"><%= dog.name %><span class="pull-right"><%= link_to 'Delete', dog, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-xs btn-danger" %></div>
+		  <div class="panel-heading"><%= dog.name %><span class="pull-right"><%= link_to 'X', dog, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-xs btn-danger", :title => "Delete" %></div>
 		  <div class="panel-body">
 				<div class="col-md-3  text-center">
 					<%= image_tag dog.avatar.url(:thumb) %><br>				
@@ -43,30 +69,6 @@
 		<button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#add_dog">
 			Add Dog
 		</button>
-		<hr>
-		<div class="panel panel-primary">
-		  <div class="panel-heading">Job Listing<button class="btn btn-success btn-xs pull-right" data-toggle="modal" data-target="#add_job">Add Job</button>
-</div>
-
-			<table class="table table-bordered">
-				<thead>
-					<tr>
-						<th>Job Title</th>
-						<th>Rate</th>
-						<th style="width: 1%"></th>
-					</tr>
-				</thead>
-				<tbody>
-				<% @owner.jobs.each do |job| %>
-					<tr>
-						<td><%= link_to job.title, job %></td>
-						<td><%= job.rate %></td>
-						<td><%= link_to 'Delete', job, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-xs btn-danger" %></td>
-					</tr>
-				<% end %>
-				</tbody>
-			</table>
-		</div>
 
 		<!-- Dog Modal -->
 		<div class="modal fade" id="add_dog" tabindex="-1" role="dialog" aria-labelledby="Add_Dog" aria-hidden="true">
