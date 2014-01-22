@@ -6,7 +6,7 @@ RoamingRoverNet::Application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :walkers, :users
+      resources :walkers, :users, :dogs, :jobs
     end
   end
 

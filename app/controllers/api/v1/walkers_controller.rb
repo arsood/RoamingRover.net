@@ -18,7 +18,7 @@ module Api
       end
 
       def update
-	@walker = Walker.find(params[:id])
+	@walker = current_user.walker.find(params[:id])
 	respond_to do |format|
 	  if @walker.update_attributes(walker_params)
 	    format.json {respond_with @walker}
