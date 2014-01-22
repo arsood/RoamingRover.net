@@ -22,8 +22,8 @@
 		</button>
 		<hr>
 		<h1>Job Listing</h1>
-		<%= @owner.jobs.each do |j| %>
-		<%= j.inspect %><br>
+		<% @owner.jobs.each do |j| %>
+		<%= link_to j.title, j %> - <%= j.rate %><br>
 		<% end %><br>
 		<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#add_job">
 			Add Job
@@ -125,7 +125,7 @@
 						Dogs:
 						<div class="form-group">
 							<% @owner.dogs.each do |d| %>
-							<label class="checkbox-inline"><%= check_box_tag "dogs[]", d.id, false, :class => "form-control inline" %> <%= d.name %> </label>
+							<label class="checkbox-inline"><%= check_box_tag "dogs[]", d.name, false, :class => "form-control inline" %> <%= d.name %> </label>
 							<% end %>
 						</div>
 						<div class="form-group">
