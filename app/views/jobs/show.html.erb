@@ -1,11 +1,11 @@
 <div class="row">
 	<div class="container">
-		<div class="well" style="margin-top: 20px;">
+		<div class="well">
 		<p><strong>Job:</strong> <%= @job.title %></p>
 		<p><strong>Description:</strong> <%= @job.description %></p>
 		<p><strong>Rate:</strong> <%= @job.rate %></p>
-		<p><strong>Days:</strong> <%= @job.days.join(',') %></p>
-		<p><strong>Dogs:</strong> <%= @job.dogs.join(',') %></p>
+		<p><strong>Days:</strong> <%= @job.days.join(', ') %></p>
+		<p><strong>Dogs:</strong> <%= @job.dogs.join(', ') %></p>
 	</div>
 	<table class="table table-bordered table-hover">
 		<thead>

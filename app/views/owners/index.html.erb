@@ -7,46 +7,66 @@
 	<div class="col-md-8">
 		<!-- If user is signed in, display all options -->
 		<% if not @owner.nil? %>
-		<h1>Owner Info</h1>
-		<div class="well">
-			<p>Name: <%= @owner.user.name %></p>
-			<p>Address: <%= @owner.address %></p>
-			<p>Zipcode: <%= @owner.zipcode %></p>
-			<p>Phone: <%= @owner.phone %></p>
-		</div>
-		<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#update_owner">
-			Update Info
-		</button>
+		<div class="panel panel-primary">
+		  <!-- Default panel contents -->
+		  <div class="panel-heading">Owner Info	<button class="btn btn-xs btn-warning pull-right" data-toggle="modal" data-target="#update_owner">Update Info</button></div>
+  		  <div class="panel-body">
+			<p><strong>Name:</strong> <%= @owner.user.name %></p>
+			<p><strong>Address:</strong> <%= @owner.address %></p>
+			<p><strong>Zipcode:</strong> <%= @owner.zipcode %></p>
+			<p><strong>Phone:</strong> <%= @owner.phone %></p>
+		  </div>
+		</div>		
 		<hr>
-		<h1>Dogs List</h1>
+		<h3>Dogs List</h3>
 		<% @owner.dogs.each do |dog| %>
-		<div class="well col-md-12">
-			<div class="col-md-3">
-				<%= image_tag dog.avatar.url(:thumb) %>
-			</div>
-			<div class="col-md-3">
-				<p>Name: <%= dog.name %></p>
-				<p>Breed: <%= dog.breed %></p>
-				<p>Age: <%= dog.age %></p>
-				<p>Fixed: <%= dog.fixed ? 'Yes' : 'No' %>
-			</div>
-			<div class="col-md-6">
-				<p>About:</p>
-				<p><%= dog.about %></p>
-			</div>
+		<div class="panel panel-primary">
+		  <!-- Default panel contents -->
+		  <div class="panel-heading"><%= dog.name %><span class="pull-right"><%= link_to 'Delete', dog, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-xs btn-danger" %></div>
+		  <div class="panel-body">
+				<div class="col-md-3  text-center">
+					<%= image_tag dog.avatar.url(:thumb) %><br>				
+				</div>
+				<div class="col-md-3">
+					<p><strong>Breed:</strong> <%= dog.breed %></p>
+					<p><strong>Age:</strong> <%= dog.age %></p>
+					<p><strong>Fixed:</strong> <%= dog.fixed ? 'Yes' : 'No' %></p>
+				</div>
+				<div class="col-md-6">
+					<p><strong>About:</strong></p>
+					<p><%= dog.about %></p>
+				</div>
+		  </div>
+
 		</div>
 		<% end %>
-		<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#add_dog">
+		<button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#add_dog">
 			Add Dog
 		</button>
 		<hr>
-		<h1>Job Listing</h1>
-		<% @owner.jobs.each do |j| %>
-		<%= link_to j.title, j %> - <%= j.rate %><br>
-		<% end %><br>
-		<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#add_job">
-			Add Job
-		</button>
+		<div class="panel panel-primary">
+		  <div class="panel-heading">Job Listing<button class="btn btn-success btn-xs pull-right" data-toggle="modal" data-target="#add_job">Add Job</button>
+</div>
+
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<th>Job Title</th>
+						<th>Rate</th>
+						<th style="width: 1%"></th>
+					</tr>
+				</thead>
+				<tbody>
+				<% @owner.jobs.each do |job| %>
+					<tr>
+						<td><%= link_to job.title, job %></td>
+						<td><%= job.rate %></td>
+						<td><%= link_to 'Delete', job, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-xs btn-danger" %></td>
+					</tr>
+				<% end %>
+				</tbody>
+			</table>
+		</div>
 
 		<!-- Dog Modal -->
 		<div class="modal fade" id="add_dog" tabindex="-1" role="dialog" aria-labelledby="Add_Dog" aria-hidden="true">
