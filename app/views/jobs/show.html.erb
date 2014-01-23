@@ -1,0 +1,35 @@
+<div class="row">
+	<div class="container">
+		<div class="well">
+		<p><strong>Job:</strong> <%= @job.title %></p>
+		<p><strong>Description:</strong> <%= @job.description %></p>
+		<p><strong>Rate:</strong> <%= @job.rate %></p>
+		<p><strong>Days:</strong> <%= @job.days.join(', ') %></p>
+		<p><strong>Dogs:</strong> <%= @job.dogs.join(', ') %></p>
+	</div>
+	<table class="table table-bordered table-hover">
+		<thead>
+			<tr>
+				<th>Job ID</th>
+				<th>Name</th>
+				<th>Proposal</th>
+				<th>Rate</th>
+				<th style="width: 1%"></th>
+				<th style="width: 1%"></th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @job.bids.each do |bid| %>
+			<tr>
+				<td><%= bid.job.id %></td>
+				<td><%= bid.walker.user.name %></td>
+				<td><%= bid.proposal %></td>
+				<td><%= number_to_currency(bid.rate) %></td>
+				<td><button class="btn btn-success">Accept</button></td>
+				<td><button class="btn btn-danger">Reject</button></td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
+	</div>
+</div>

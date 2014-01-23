@@ -7,26 +7,67 @@
 	<div class="col-md-8">
 		<!-- If user is signed in, display all options -->
 		<% if not @owner.nil? %>
-		<h1>Owner Info</h1>
-		<%= @owner.inspect %><br>
-		<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#update_owner">
-			Update Info
-		</button>
+		<div class="panel panel-primary">
+		  <!-- Default panel contents -->
+		  <div class="panel-heading">Owner Info	<button class="btn btn-xs btn-warning pull-right" data-toggle="modal" data-target="#update_owner"><%= fa_icon "pencil" %></button></div>
+  		  <div class="panel-body">
+			<p><strong>Name:</strong> <%= @owner.user.name %></p>
+			<p><strong>Address:</strong> <%= @owner.address %></p>
+			<p><strong>Zipcode:</strong> <%= @owner.zipcode %></p>
+			<p><strong>Phone:</strong> <%= @owner.phone %></p>
+		  </div>
+		</div>		
 		<hr>
-		<h1>Dogs List</h1>
-		<% @owner.dogs.each do |d| %>
-		<%= d.inspect %><br>
+		<div class="panel panel-primary">
+		  <div class="panel-heading">Job Listing<button class="btn btn-success btn-xs pull-right" data-toggle="modal" data-target="#add_job"><%= fa_icon "plus" %></button>
+		  </div>
+
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<th>Job Title</th>
+						<th>Rate</th>
+						<th style="width: 1%"></th>
+						<th style="width: 1%"></th>
+					</tr>
+				</thead>
+				<tbody>
+				<% @owner.jobs.each do |job| %>
+					<tr>
+						<td><%= link_to job.title, job %></td>
+						<td><%= job.rate %></td>
+						<td><%= link_to "View", job, :class => "btn btn-primary btn-xs" %></td>
+						<td><%= link_to 'Delete', job, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-xs btn-danger" %></td>
+					</tr>
+				<% end %>
+				</tbody>
+			</table>
+		</div>
+		<hr>
+		<h3>Dogs List</h3>
+		<% @owner.dogs.each do |dog| %>
+		<div class="panel panel-primary">
+		  <!-- Default panel contents -->
+		  <div class="panel-heading"><%= dog.name %><span class="pull-right"><%= link_to 'X', dog, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-xs btn-danger", :title => "Delete" %></div>
+		  <div class="panel-body">
+				<div class="col-md-3  text-center">
+					<%= image_tag dog.avatar.url(:thumb) %><br>				
+				</div>
+				<div class="col-md-3">
+					<p><strong>Breed:</strong> <%= dog.breed %></p>
+					<p><strong>Age:</strong> <%= dog.age %></p>
+					<p><strong>Fixed:</strong> <%= dog.fixed ? 'Yes' : 'No' %></p>
+				</div>
+				<div class="col-md-6">
+					<p><strong>About:</strong></p>
+					<p><%= dog.about %></p>
+				</div>
+		  </div>
+
+		</div>
 		<% end %>
-		<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#add_dog">
+		<button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#add_dog">
 			Add Dog
-		</button>
-		<hr>
-		<h1>Job Listing</h1>
-		<%= @owner.jobs.each do |j| %>
-		<%= j.inspect %><br>
-		<% end %><br>
-		<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#add_job">
-			Add Job
 		</button>
 
 		<!-- Dog Modal -->
@@ -48,6 +89,11 @@
 						</div>
 						<div class="form-group">
 							Age: <%= f.number_field :age, :class => "form-control", :min => 0 %>
+						</div>
+						<div class="form-group">
+							Not Fixed: <%= f.radio_button :fixed, false, :checked => true %> <br>
+							Fixed: <%= f.radio_button :fixed, true %>
+
 						</div>
 						<div class="form-group">
 							Image: <%= f.file_field :avatar, :class => "form-control" %>
@@ -125,11 +171,12 @@
 						Dogs:
 						<div class="form-group">
 							<% @owner.dogs.each do |d| %>
-							<label class="checkbox-inline"><%= check_box_tag "dogs[]", d.id, false, :class => "form-control inline" %> <%= d.name %> </label>
+							<label class="checkbox-inline"><%= check_box_tag "dogs[]", d.name, false, :class => "form-control inline" %> <%= d.name %> </label>
 							<% end %>
 						</div>
 						<div class="form-group">
-							<%= f.number_field :rate, :class => "form-control" %>
+							Rate:
+							<%= f.text_field :rate, :class => "form-control" %>
 						</div>
 						<%= hidden_field :job, :status, :value => "listed" %>
 					</div>
