@@ -3,11 +3,6 @@ class WalkersController < ApplicationController
 
 	def index
 		@walker = current_user.walker
-		@all_walkers = Walker.all
-		respond_to do |format|
-			format.html
-			format.json { render json: @all_walkers }
-		end
 	end
 
 	def walker_params
