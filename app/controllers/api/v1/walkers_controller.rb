@@ -1,6 +1,7 @@
 module Api
   module V1
     class WalkersController < ApplicationController
+      #Hey, change this password before going live!
       http_basic_authenticate_with name: "admin", password: "barkbark"
       respond_to :json
 

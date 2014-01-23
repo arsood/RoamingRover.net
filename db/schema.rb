@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140115040040) do
+ActiveRecord::Schema.define(version: 20140122033728) do
 
   create_table "bids", force: true do |t|
     t.text     "proposal",   limit: 255
@@ -27,11 +27,15 @@ ActiveRecord::Schema.define(version: 20140115040040) do
     t.string   "name"
     t.string   "breed"
     t.integer  "age"
-    t.string   "image"
     t.integer  "owner_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.text     "about",      limit: 255
+    t.text     "about",               limit: 255
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
+    t.boolean  "fixed"
   end
 
   add_index "dogs", ["owner_id"], name: "index_dogs_on_owner_id"
@@ -41,11 +45,12 @@ ActiveRecord::Schema.define(version: 20140115040040) do
     t.text     "description", limit: 255
     t.string   "days"
     t.time     "time"
-    t.float    "rate"
     t.integer  "owner_id"
     t.string   "status"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "dogs"
+    t.string   "rate"
   end
 
   add_index "jobs", ["owner_id"], name: "index_jobs_on_owner_id"

@@ -20,11 +20,16 @@ body {
   position:fixed;
   top: -10px;
   left: 5px;
+  padding: 13px 13px 0 13px
 }
 
 .navbar-inverse {
   background-color: #0066CC;
   border-color: #006666;
+}
+
+.navbar-nav {
+  margin-left: 170px;
 }
 
 .navbar-inverse .navbar-nav > li > a {
@@ -68,7 +73,7 @@ main {
   background-color: white;
   padding-bottom: 80px;
   width: 100%;
-  margin-top: 40px;
+  margin-top: 51px;
 }
 
 section {

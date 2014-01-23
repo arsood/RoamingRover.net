@@ -6,12 +6,18 @@ class WalkersController < ApplicationController
 	end
 
 	def walker_params
-		params.require(:walkers).permit(:user_id, :zip_code, :breeds, :age, :experience, :about)
+		params.require(:walkers).permit(:user_id, :zipcode, :breeds, :age, :experience, :about)
 	end
 
   def index
   end
 
   def show
+  end
+
+  def dashboard_calls
+  	@client_listings = Job.where()
+
+  	render 'dw_dashboard'
   end
 end
