@@ -6,5 +6,12 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Walker.create(user_id: "testwalker@example.com", zipcode: "94118", breeds: "", age: "01/01/1992", experience: "6", about: "Something here")
+o = Owner.new
+o.user_id = "example"
+o.address = "27 Ball Road"
+
+w = Walker.new
+w.user_id = "walker example"
+w.zipcode = "92392"
+
 
