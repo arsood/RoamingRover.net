@@ -3,6 +3,4 @@ class ReviewsController < ApplicationController
 		params.require(:reviews).permit(:review, :rating, :owner_id, :walker_id)
 	end
 
-  def rating
-  end
 end

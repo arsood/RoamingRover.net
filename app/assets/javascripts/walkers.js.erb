@@ -34,11 +34,11 @@ function setDwZip(zipcode) {
 				var zip_latitude = data['results'][0]['geometry']['location']['lat'];
 				var zip_longitude = data['results'][0]['geometry']['location']['lng'];
 				var map = new google.maps.Map(document.getElementById('dw-dashboard-main-map'), {
-					zoom: 12,
+					zoom: 20,
 					center: new google.maps.LatLng(zip_latitude, zip_longitude),
 					mapTypeId: google.maps.MapTypeId.ROADMAP
 				});
-				
+			
 				$("body").removeClass("dashboard-starting-background");
 				resizeMainMap();
 				$("#dw-dashboard-main").fadeIn(800);
@@ -46,6 +46,34 @@ function setDwZip(zipcode) {
 		});		
 	});
 }
+
+<% @jobs.each do |job| %>
+var jobLocations = [
+  new google.maps.LatLng(<% job.owner.latitude %>, <% job.owner.longitude %>),
+];
+<% end %>
+
+var markers = [];
+var iterator = 0;
+
+function drop() {
+  for (var i = 0; i < @jobs.length; i++) {
+    setTimeout(function() {
+      addMarker();
+    }, i * 200);
+  }
+}
+
+function addMarker() {
+  markers.push(new google.maps.Marker({
+    position: jobLocations[iterator],
+    map: map,
+    draggable: false,
+    animation: google.maps.Animation.DROP
+  }));
+  iterator++;
+}
+
 
 //Change zipcode
 

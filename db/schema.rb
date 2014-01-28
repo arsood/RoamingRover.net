@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140122033728) do
+ActiveRecord::Schema.define(version: 20140128062600) do
 
   create_table "bids", force: true do |t|
     t.text     "proposal",   limit: 255
@@ -62,6 +62,8 @@ ActiveRecord::Schema.define(version: 20140122033728) do
     t.datetime "updated_at"
     t.string   "phone"
     t.string   "zipcode"
+    t.string   "latitude"
+    t.string   "longitude"
   end
 
   create_table "reviews", force: true do |t|

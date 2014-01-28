@@ -2,7 +2,25 @@
 <div class="container">
 	<div class="row">
 		<h3>Walker Info</h3>
-		<%= @walker.inspect %>
+        <div class="panel panel-primary">
+          <div class="panel-heading"> <p>Here are some jobs!</p></div>
+          <table class="table table-striped">
+            <tbody>
+              <%  @jobs.each do |job| %>
+                <tr>
+                  <td>Job Title: <%= job.title %></td>
+                  <td>Name: <%= job.owner.user.name %></td>
+                  <td>Puppies: <%= job.dogs %> </td>
+                  <td>When: <%= job.days %> </td>
+                  <td>Zipcode: <%= job.owner.zipcode %></td>
+                  <td>Rate: <%= job.rate %></td>
+                  <td>Address: <%= job.owner.address %></td>
+                  <td><%= link_to "Accept Job", '#', :class => "btn btn-primary btn-xs"%>
+                </tr>
+              <% end %>
+              </tbody>
+            </table>
+        </div>
 		<hr>
 	</div>
 </div>
