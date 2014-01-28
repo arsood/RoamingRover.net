@@ -1,4 +1,29 @@
 <div class="row">
+<<<<<<< HEAD
+  <div class="col-md-4">
+        
+        <div class="panel panel-primary">
+          <div class="panel-heading"> <p>These dogwalkers can't wait to meet you!</p></div>
+         
+          <table class="table table-striped">
+            <tbody>
+              <%  @walkers.each do |walker| %>
+                <tr>
+                  <td>Name: <%= walker.user.name %></td>
+                  <td>Zipcode: <%= walker.zipcode %></td>
+                  <% walker.reviews.each do |review| %>
+                  <td>Rating: <%= review.rating %></td>
+                  <% end %>
+                  <td><%= link_to "Book Me", '#', :class => "btn btn-primary btn-xs"%>
+                </tr>
+              <% end %>
+              </tbody>
+            </table>
+       </div>
+     </div>
+
+
+=======
 	<div class="col-md-4">
 		<h1>Walkers Listing</h1>
 		<p>
@@ -11,6 +36,7 @@
 		</p>
 		<hr>
 	</div>
+>>>>>>> upstream/development
 	<div class="col-md-8">
 		<!-- If user is signed in, display all options -->
 		<% if not @owner.nil? %>
@@ -197,4 +223,5 @@
 		</div><!-- /.modal -->
 		<% end %> <!-- End @owner.nil? -->
 	</div>
+</div>
 </div>

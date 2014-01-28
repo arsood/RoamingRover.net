@@ -14,6 +14,10 @@ RoamingRoverNet::Application.routes.draw do
   end
 
 
+  resources :reviews do
+   resources :ratings
+  end
+
   devise_scope :user do
     get 'sign_out', :to => 'devise/sessions#destroy'
   end
