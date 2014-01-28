@@ -10,7 +10,9 @@
                 <tr>
                   <td>Name: <%= walker.user.name %></td>
                   <td>Zipcode: <%= walker.zipcode %></td>
-                  <td>Rating: ***** </td>
+                  <% walker.reviews.each do |review| %>
+                  <td>Rating: <%= review.rating %></td>
+                  <% end %>
                   <td><%= link_to "Book Me", '#', :class => "btn btn-primary btn-xs"%>
                 </tr>
               <% end %>

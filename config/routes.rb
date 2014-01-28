@@ -2,7 +2,11 @@ RoamingRoverNet::Application.routes.draw do
   root 'static#index'
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks", :registrations => 'registrations' }
 
-  resources :walkers, :owners, :dogs, :jobs, :reviews
+  resources :walkers, :owners, :dogs, :jobs
+
+  resources :reviews do
+   resources :ratings
+  end
 
   devise_scope :user do
     get 'sign_out', :to => 'devise/sessions#destroy'
