@@ -16,8 +16,9 @@ class WalkersController < ApplicationController
   end
 
   def dashboard_calls
-  	@client_listings = Job.where()
-
+    zipcode_min = ((params[:zipcode].to_i / 100).floor)*100
+    zipcode_max = zipcode_min + 99
+  	@client_listings = Job.where(Owner.where(:zipcode => zipcode_min..zipcode_max)).order(created_at: :desc)
   	render 'dw_dashboard'
   end
 end

@@ -25,15 +25,15 @@
     <!--DW Listings-->
     <div id="dw-dashboard-column-two" class="no-pad" style="padding-left:5px;">
     	
-        
+        <% @client_listings.each do |listing| %>
 
         <!--One Listing-->
         <div class="dw-dashboard-listing-modbox">
             <div class="dw-listing-title">
-                Hey we need a walk today!
+                <%= listing.title %>
             </div>
             <div class="dw-listing-desc margin-top-10">
-            	Hey we could really use a walk today. We have been home all day eating doggy treats and we want to go running! Take us to the dog park or the beach and we're set!
+            	<%= listing.description %>
             </div>
             <div class="row margin-top-10">
             	<div class="col-sm-4">
@@ -41,7 +41,13 @@
                     	<strong>Days:</strong>
                     </div>
                     <div class="margin-top-10">
-                    	Every Monday and Wednesday in January
+                    	<% listing.days.each_with_index do |day, index| %>
+                            <% if index == listing.days.length - 1 %>
+                                <%= day %>
+                            <% else %>
+                                <%= day + ", " %>
+                            <% end %>
+                        <% end %>
                     </div>
                 </div>
                 <div class="col-sm-3">
@@ -49,7 +55,7 @@
                     	<strong>Pay:</strong>
                     </div>
                     <div class="margin-top-10">
-                    	We will pay $30 per hour walked
+                    	<%= listing.rate %>
                     </div>
                 </div>
                 <div class="col-sm-3">
@@ -57,21 +63,21 @@
                     	<strong>Dogs:</strong>
                     </div>
                     <div class="margin-top-10">
-                    	Rover, Riley
-                    </div>
-                </div>
-                <div class="col-sm-2">
-                	<div>
-                    	<strong>Fixed:</strong>
-                    </div>
-                    <div class="margin-top-10">
-                    	Yes
+                    	<% listing.dogs.each_with_index do |dog, index| %>
+                            <% if index == listing.dogs.length - 1 %>
+                                <%= dog %>
+                            <% else %>
+                                <%= dog + ", " %>
+                            <% end %>
+                        <% end %>
                     </div>
                 </div>
             </div>
         </div>
         <!--/One Listing-->
         
+        <% end %>
+
     </div>
     <!--/DW Listings-->
     

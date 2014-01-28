@@ -17,3 +17,5 @@
 
 # Ignore image upload folder
 /public/system/*
+
+.idea/

@@ -1,4 +1,5 @@
 <div class="row">
+<<<<<<< HEAD
   <div class="col-md-4">
         
         <div class="panel panel-primary">
@@ -22,6 +23,20 @@
      </div>
 
 
+=======
+	<div class="col-md-4">
+		<h1>Walkers Listing</h1>
+		<p>
+		<% if not @walker.nil? %>
+		<% render(:partial => @walker) %>
+		<% else %>
+		<p>No walkers here :(</p>
+		<% end %>
+
+		</p>
+		<hr>
+	</div>
+>>>>>>> upstream/development
 	<div class="col-md-8">
 		<!-- If user is signed in, display all options -->
 		<% if not @owner.nil? %>
