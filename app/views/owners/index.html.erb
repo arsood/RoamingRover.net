@@ -1,18 +1,14 @@
 <div class="row">
   <div class="col-md-4">
-        
         <div class="panel panel-primary">
           <div class="panel-heading"> <p>These dogwalkers can't wait to meet you!</p></div>
-         
           <table class="table table-striped">
             <tbody>
               <%  @walkers.each do |walker| %>
                 <tr>
                   <td>Name: <%= walker.user.name %></td>
                   <td>Zipcode: <%= walker.zipcode %></td>
-                  <% walker.reviews.each do |review| %>
-                  <td>Rating: <%= review.rating %></td>
-                  <% end %>
+                  <td>Ratins: <%= walker.reviews.average(:rating).to_i %></td>
                   <td><%= link_to "Book Me", '#', :class => "btn btn-primary btn-xs"%>
                 </tr>
               <% end %>
