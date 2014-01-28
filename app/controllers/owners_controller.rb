@@ -5,6 +5,7 @@ class OwnersController < ApplicationController
 			@walkers = Walker.find(:all, :conditions => ["id != ? AND zipcode IS NOT NULL", current_user.id])
 			@dog = Dog.new
 			@job = Job.new
+			@no_walkers = "Looks like we need more walkers!"
 		else 
 			# Will need to add zipcode localization condition
 			@walkers = Walker.find(:all, :conditions => ["zipcode != NULL"])		
