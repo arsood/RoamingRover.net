@@ -30,4 +30,6 @@ class ApplicationController < ActionController::Base
   end
 
   helper_method :resource, :resource_name, :devise_mapping
+
+  @jobs=Job.all
 end

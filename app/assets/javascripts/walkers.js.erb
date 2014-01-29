@@ -1,4 +1,5 @@
 //Resize the mainstage
+<% @jobs=Job.all %>
 
 $(window).resize(function() {
 	resizeMainMap();
@@ -49,7 +50,7 @@ function setDwZip(zipcode) {
 
 <% @jobs.each do |job| %>
 var jobLocations = [
-  new google.maps.LatLng(<% job.owner.latitude %>, <% job.owner.longitude %>),
+  new google.maps.LatLng(<%= job.owner.latitude.to_i %>, <%= job.owner.longitude.to_i %>),
 ];
 <% end %>
 
@@ -74,7 +75,10 @@ function addMarker() {
   iterator++;
 }
 
-
+$("#drop").on('click', function (e) {
+	  e.preventDefault();
+	  drop();
+	});
 //Change zipcode
 
 $("#new-dw-zip").keypress(function(e) {
