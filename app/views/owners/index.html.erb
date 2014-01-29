@@ -8,7 +8,7 @@
                 <tr>
                   <td>Name: <%= walker.user.name %></td>
                   <td>Zipcode: <%= walker.zipcode %></td>
-                  <td>Ratins: <%= walker.reviews.average(:rating).to_i %></td>
+                  <td>Ratings: <%= walker.reviews.average(:rating).to_i %></td>
                   <td><%= link_to "Book Me", '#', :class => "btn btn-primary btn-xs"%>
                 </tr>
               <% end %>
