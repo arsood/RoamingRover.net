@@ -1,26 +1,51 @@
-
 <div class="container">
-	<div class="row">
-		<h3>Walker Info</h3>
-        <div class="panel panel-primary">
-          <div class="panel-heading"> <p>Here are some jobs!</p></div>
-          <table class="table table-striped">
-            <tbody>
-              <%  @jobs.each do |job| %>
-                <tr>
-                  <td>Job Title: <%= job.title %></td>
-                  <td>Name: <%= job.owner.user.name %></td>
-                  <td>Puppies: <%= job.dogs %> </td>
-                  <td>When: <%= job.days %> </td>
-                  <td>Zipcode: <%= job.owner.zipcode %></td>
-                  <td>Rate: <%= job.rate %></td>
-                  <td>Address: <%= job.owner.address %></td>
-                  <td><%= link_to "Accept Job", '#', :class => "btn btn-primary btn-xs"%>
-                </tr>
-              <% end %>
-              </tbody>
-            </table>
-        </div>
-		<hr>
-	</div>
+  <br>
+   <td><%= link_to "See Available Jobs", 'walkers#dashboard_calls', :class => "btn btn-primary btn-lg"%>
+  </div>
+  <br>
+  <div class="col-md-8">
+    <!-- If user is signed in, display all options -->
+    <% if not @walker.nil? %>
+    <div class="panel panel-primary">
+      <!-- Default panel contents -->
+      <div class="panel-heading">Your Walker Profile <button class="btn btn-xs btn-warning pull-right" data-toggle="modal" data-target="#update_owner"><%= fa_icon "pencil" %></button></div>
+        <div class="panel-body">
+      <p><strong>Name:</strong> <%= @walker.user.name %></p>
+      <p><strong>Zipcode:</strong> <%= @walker.zipcode %></p>
+      <p><strong>Experience:</strong> <%= @walker.experience %></p>
+      <p><strong>About:</strong> <%= @walker.about %></p>
+      </div>
+    </div>    
+    <hr>
+    
+
+    <!-- Update Owner Info Modal -->
+    <div class="modal fade" id="update_owner" tabindex="-1" role="dialog" aria-labelledby="Update_Owner" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="Update_Owner">Updated Walker Profile</h4>
+          </div>
+          <%= form_for @walker do |f| %>
+          <div class="modal-body">
+            <div class="form-group">
+              Zipcode: <%= f.text_field :zipcode, :class => "form-control" %>
+            </div>
+            <div class="form-group">
+              Experience: <%= f.text_field :experience, :class => "form-control" %>
+            </div>
+            <div class="form-group">
+              About: <%= f.text_field :about, :class => "form-control" %>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <%= f.submit "Update Profile", :class => "btn btn-primary" %>
+          </div>
+          <% end %> <!-- End @owner update -->
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+  <% end %> <!-- End @owner.nil? -->
 </div>

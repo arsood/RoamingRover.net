@@ -11,6 +11,23 @@ class OwnersController < ApplicationController
 		end
 	end
 
+	def geocode
+  #   if params[:latitude].present?
+  #     @owners = Owner.near(params[:search], 20, :order => :distance)
+  #   else
+  #     @owner = Owner.all
+  #     @owner.each do |o|
+  #       if o.latitude.nil?
+  #         new_location = "#{o.address} #{o.zipcode}"
+  #         s = Geocoder.search(new_location)
+  #         o.latitude = s[0].latitude
+  #         o.longitude = s[0].longitude
+  #         o.save
+  #       end
+  #     end
+  #   end
+	end
+
 	def update 
 		@owner = Owner.find(current_user.owner.id)
 		if @owner.update_attributes(owner_params)
