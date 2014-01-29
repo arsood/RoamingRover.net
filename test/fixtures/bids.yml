@@ -4,12 +4,8 @@ one:
   proposal: MyString
   rate: 1.5
   status: MyString
-  references: 
-  references: 
 
 two:
   proposal: MyString
   rate: 1.5
   status: MyString
-  references: 
-  references: 

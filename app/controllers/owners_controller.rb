@@ -7,7 +7,7 @@ class OwnersController < ApplicationController
 			@job = Job.new
 		else 
 			# Will need to add zipcode localization condition
-			@walkers = Walker.find(:all, :conditions => ["zipcode != NULL"])		
+			@walkers = Walker.find(:all, :conditions => ["zipcode != NULL AND walker.zipcode == #{current_user.zipcode}"])		
 		end
 	end
 

@@ -144,7 +144,7 @@
   z-index: 3;
 }
 @media screen and (max-width: 768px) {
-  #welcome .intro.active article, #welcome .intro: not(.active) .background-image-container:hover article {
+  #welcome .intro.active article, #welcome .intro:not(.active) .background-image-container:hover article {
   width: 5%}
 }#welcome .intro {
   -webkit-transition: height 0.75s cubic-bezier(0.23,  1,  0.32,  1);
@@ -259,7 +259,7 @@
   visibility: hidden;
 }
 @media screen and (max-width: 768px) {
-  #welcome .intro: not(.active) article:hover, #welcome article.active {
+  #welcome .intro:not(.active) article:hover, #welcome article.active {
   width: 5%}
 }#welcome #walkers-welcome {
   background-image: url("DogwalkersBckgrnd.jpg");
@@ -342,6 +342,6 @@
 #welcome .intro:not(.active) #walkers-welcome:hover, #welcome .intro:not(.active) #owners-welcome:hover, #welcome #walkers-welcome.active, #welcome #owners-welcome.active {
   width: 80%}
 @media screen and (max-width: 768px) {
-  #welcome .intro: not(.active) #walkers-welcome:hover, #welcome .intro:not(.active) #owners-welcome:hover, #welcome #walkers-welcome.active, #welcome #owners-welcome.active {
+  #welcome .intro:not(.active) #walkers-welcome:hover, #welcome .intro:not(.active) #owners-welcome:hover, #welcome #walkers-welcome.active, #welcome #owners-welcome.active {
   width: 95%}
 }
