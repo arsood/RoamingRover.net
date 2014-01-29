@@ -2,7 +2,7 @@ class OwnersController < ApplicationController
 	def index
 		if not current_user.nil?
 			@owner = current_user.owner
-			@walkers = Walker.find(:all, :conditions => ["id != ? AND zipcode IS NOT NULL", current_user.id])
+			@walkers = Walker.find(:all, :conditions => ["id != ? AND zipcode = #{params[:zipcode]}", current_user.id])
 			@dog = Dog.new
 			@job = Job.new
 		else 

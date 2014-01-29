@@ -59,12 +59,14 @@
               Find reliable dogwalkers.
               </p>
                <p> I am looking for a dogwalker near: </p>
+                <%= form_tag( {controller: :owners, action: :index}, method: :get ) do %>
                 <div class="field">
-                <%= text_field_tag :zipcode, "zipcode" %>
+                <%= text_field_tag :zipcode, "zipcode", :value => 39430 %>
                 </div>
                 <div class="actions">
-                  <%= button_to "Get Started", owners_path, :method => :get%>
-               </div>
+                  <%= submit_tag "Get Started", name: nil%>
+                </div>
+                <% end %>
               <div class="action_links">
                 <span>
                   Already a member?
