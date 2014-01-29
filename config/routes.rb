@@ -2,12 +2,12 @@ RoamingRoverNet::Application.routes.draw do
   root 'static#index'
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks", :registrations => 'registrations' }
 
-  resources :walkers, :owners, :dogs, :reviews, :jobs
+  resources :walkers, :owners, :dogs, :reviews, :jobs, :charges
 
   namespace :api do
     namespace :v1, :defaults => {:format => 'json'}  do
       resources :users, :dogs, :jobs, :walkers
-      resources :owners 
+      resources :owners, :charges 
     end
   end
 
